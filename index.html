@@ -1,342 +1,364 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Basic Page Needs
-    ================================================== -->
+
+<head>
     <meta charset="utf-8">
-    <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welfie - BP Machine</title>
-     
-    <!-- Favicons
-    ================================================== -->
-<!--     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
- -->
-    <!-- Bootstrap -->
-    <link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+    <title>WELFIE, your wellness selfie</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+</head>
 
-    <!-- Slider
-    ================================================== -->
-    <link href="css/owl.carousel.css" rel="stylesheet" media="screen">
-    <link href="css/owl.theme.css" rel="stylesheet" media="screen">
-
-    <!-- Stylesheet
-    ================================================== -->
-    <link rel="stylesheet" type="text/css"  href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/responsive.css">
-
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400' rel='stylesheet' type='text/css'>
-
-    <script type="text/javascript" src="js/modernizr.custom.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <!-- Navigation
-    ==========================================-->
-    <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html">WELFIE</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#tf-home" class="page-scroll">Home</a></li>
-            <li><a href="#tf-services" class="page-scroll">Idea</a></li>
-            <li><a href="#tf-about" class="page-scroll">Product</a></li>
-            <li><a href="#tf-team" class="page-scroll">Team</a></li>
-          <!--   <li><a href="#tf-works" class="page-scroll">Portfolio</a></li> -->
-         <!--    <li><a href="#tf-testimonials" class="page-scroll">Testimonials</a></li> -->
-            <li><a href="#tf-contact" class="page-scroll">Contact</a></li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-
-    <!-- Home Page
-    ==========================================-->
-    <div id="tf-home" class="text-center">
-        <div class="overlay">
-            <div class="col-md-12">
-                <div class="container">
-                    <div class="content">
-                <h1>Introducing <strong><span class="color">WELFIE</span></strong></h1>
-                <p class="lead"><strong>Welfie </strong>is inexpensive <strong>smartphone</strong> based personal blood pressure measuring device for you and your family. It is designed to solve the  hassle of <strong>taking BP</strong> and <strong>sharing</strong> readings with your doctor.</p>
-                </div>
-                <a href="#tf-about" class="fa fa-angle-down page-scroll"></a>
-            </div>
-            </div>
-        </div>
-    </div>
-
-        <!-- Services Section
-    ==========================================-->
-    <div id="tf-services" class="text-center">
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top bg-disable">
         <div class="container">
-            <div class="section-title center">
-                <h2><strong>What we are trying to solve</strong></h2>
-                <div class="line">
-                    <hr>
-                </div>
-                <div class="clearfix"></div>
-                <small><em>These are the problems that we have been trying to solve. Please let us know if you can connect these problems</em></small>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#home">
+                    <span><img src="img/welfie.png"></span>
+                </a>
             </div>
-            <div class="space"></div>
-            <div class="row">
-                <div class="col-md-3 col-sm-6 service">
-                    <img id="meter-icon" src="img/readings.png" alt="">
-                    <h4><strong>Measurement Accuracy</strong></h4>
-                    <p>Available <b>consumer</b> BP machines are not that accurate, hence doctors don't rely on the reading when shared</p>
-                </div>
-
-                <div class="col-md-3 col-sm-6 service">
-                    <i class="fa fa-mobile"></i>
-                    <h4><strong>Keeping History</strong></h4>
-                    <p>BP histroy can reveal important health issues but most people maintain history in some log book which is not useful.</p>
-                </div>
-
-                <div class="col-md-3 col-sm-6 service">
-                    <i class="fa fa-camera"></i>
-                    <h4><strong>Sharing Records</strong></h4>
-                    <p>Sharing log books with doctors is not a efficient way of sharing data for analysis</p>
-                </div>
-
-                <div class="col-md-3 col-sm-6 service">
-                    <i class="fa fa-bullhorn"></i>
-                    <h4><strong>REMINDERS</strong></h4>
-                    <p>Some patients forget to take their daily BP measurement and make record of it.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- About Us Page
-    ==========================================-->
-    <div id="tf-about">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="img/02.gif" class="img-responsive">
-                </div>
-                <div class="col-md-6">
-                    <div class="about-text">
-                        <div class="section-title">
-                            <h4>Welfie Software</h4>
-                            <h2>Features of <strong>Application</strong></h2>
-                            <hr>
-                            <div class="clearfix"></div>
-                        </div>
-                        <p class="intro">Our android app uses machine learning and good design to improve the overall experience</p>
-                        <ul class="about-list">
-                            <li>
-                                <span class="fa fa-dot-circle-o"></span>
-                                <strong>Accurate BP</strong> - <em>Using ML for accurate readings</em>
-                            </li>
-                            <li>
-                                <span class="fa fa-dot-circle-o"></span>
-                                <strong>Health Prediction</strong> - <em>Using ML for predicting any health issue</em>
-                            </li>
-                            <li>
-                                <span class="fa fa-dot-circle-o"></span>
-                                <strong>History</strong> - <em>Record history for multiple users</em>
-                            </li>
-                            <li>
-                                <span class="fa fa-dot-circle-o"></span>
-                                <strong>Share</strong> - <em>Share history with just one click</em>
-                            </li>
-                            <li>
-                                <span class="fa fa-dot-circle-o"></span>
-                                <strong>Reminders</strong> - <em>Get daily reminders for taking BP readings</em>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-         <div class="container" style="margin:4em auto;">
-                    <div class="row">
-
-                    <div class="col-md-6">
-                        <img src="img/02.jpg" class="img-responsive">
-                    </div>
-                        <div class="col-md-6">
-                            <div class="about-text">
-                                <div class="section-title">
-                                    <h4>Welfie Hardware</h4>
-                                    <h2>Features of <strong>hardware</strong></h2>
-                                    <hr>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <p class="intro">Our hardware uses minimal electronics to keep the price and size small</p>
-                                <ul class="about-list">
-                                    <li>
-                                        <span class="fa fa-dot-circle-o"></span>
-                                        <strong>Affordable price</strong>  
-                                    </li>
-                                    <li>
-                                        <span class="fa fa-dot-circle-o"></span>
-                                        <strong>Easy setup</strong> - <em>Plug it in your smart phone & launch app</em>
-                                    </li> 
-                                </ul>
-                            </div>
-                        </div>
-                    </div> 
-                </div>
-
-    </div>
-
-    <!-- Team Page
-    ==========================================-->
-    <div id="tf-team" class="text-center">
-        <div class="overlay">
-            <div class="container">
-                <div class="section-title center">
-                    <h2>Meet <strong>our team</strong></h2>
-                    <div class="line">
-                        <hr>
-                    </div>
-                </div>
-
-                <div id="team" class="owl-carousel owl-theme row">
-                    <div class="item">
-                        <div class="thumbnail">
-                            <img src="img/team/01.jpg" alt="..." class="img-circle team-img">
-                            <div class="caption">
-                                <h3>Samya Bagchi</h3>
-                                <p>CEO / Founder</p>
-                                <p>IIIT Bangalore, Machine Learning</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="thumbnail">
-                            <img src="img/team/02.jpg" alt="..." class="img-circle team-img">
-                            <div class="caption">
-                                <h3>Ritwik G</h3>
-                                <p>CTO / Founder</p>
-                                <p>College Dropout, Hardware Engineer</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="thumbnail">
-                            <img src="img/team/03.jpg" alt="..." class="img-circle team-img">
-                            <div class="caption">
-                                <h3>Dr. Abdul Salaam</h3>
-                                <p>CFO / Founder</p>
-                                <p>M.B.B.S., M.D., Medical Researcher</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="thumbnail">
-                            <img src="img/team/04.jpg" alt="..." class="img-circle team-img">
-                            <div class="caption">
-                                <h3>Abhinav Kr</h3>
-                                <p>COO / Founder</p>
-                                <p>IIT Bombay, Product Manager & User Researcher</p>
-                            </div>
-                        </div>
-                    </div>
- 
-                </div>
-                
-            </div>
-        </div>
-    </div>
-
- 
-    <!-- Contact Section
-    ==========================================-->
-    <div id="tf-contact" class="text-center">
-        <div class="container">
-
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-
-                    <div class="section-title center">
-                        <h2>Feel free to <strong>contact us</strong></h2>
-                        <div class="line">
-                            <hr>
-                        </div>
-                        <div class="clearfix"></div>        
-                    </div>
-
-                     <div class="col-md-6">
-                         <h3>ADDRESS</h3><br>
-                         Edifice, 80 feet Road, Indiranagar,Bangalaore
-                         <br>
-                         India, 560038
-                     </div>
-                     <div class="col-md-6 align-left">
-                         <h3>EMAIL ADDRESS</h3>
-                         <ul style="list-style:none">
-                             <li>samya@welfie.in</li>
-                             <li>ritwik@welfie.in</li> 
-                             <li>abhinav@welfie.in</li>
-                         </ul>
-                     </div>
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-<!--     <nav id="footer">
-        <div class="container">
-            <div class="pull-left fnav">
-                <p>ALL RIGHTS RESERVED. COPYRIGHT © 2014. Designed by <a href="https://dribbble.com/shots/1817781--FREEBIE-Spirit8-Digital-agency-one-page-template">Robert Berki</a> and Coded by <a href="https://dribbble.com/jennpereira">Jenn Pereira</a></p>
-            </div>
-            <div class="pull-right fnav">
-                <ul class="footer-social">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <!-- <ul class="nav navbar-nav">
+                        <li><a href="#">Link1</a></li>
+                        <li><a href="#">Link2</a></li>
+                        <li><a href="#">Link3</a></li>
+                    </ul> -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-width"><a class="page-scroll" href="#home">HOME</a></li>
+                    <li class="nav-width"><a class="page-scroll" href="#product">PRODUCT</a></li>
+                    <li class="nav-width"><a class="page-scroll" href="#team">TEAM</a></li>
+                    <li class="nav-width"><a class="page-scroll" href="blogPage.html">BLOG</a></li>
+                    <li class="nav-width"><a class="page-scroll" href="#contact">CONTACT US</a></li>
                 </ul>
             </div>
         </div>
-    </nav> -->
+    </nav>
+    <section id="home" class="row full-height">
+        <div class="container">
+            <div class="container first-container">
+                <div class="main-text">
+                    <p class="main-text-title">WELFIE</p>
+                    <p class="main-text-sub-title">TAKE YOUR WELLNESS SELFIE</p>
+                    <p><span>Introducing a smartphone based intelligent <b>BP machine</b></span></p>
+                    <div class="pre-boooking input-group col-md-4 col-md-offset-4"> 
+                    <div class="promo"> Preorder your device now! </div>
+                       <form class="" action="http://welfie.in:5000/send"  method="POST">
+                            <input id="get-email-id" type="text" name="email_address"/>
+                            <input type="submit" value="Book Now" name="submit" id="book-now" > 
 
+                            </input>
+                       </form>
+                    </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery.1.11.1.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/SmoothScroll.js"></script>
-    <script type="text/javascript" src="js/jquery.isotope.js"></script>
+                </div><img src="img/welfie-sketch.png" class="img-responsive on-device" alt=""> </div>
+        </div>
+    </section>
+    <section id="product" class="row">
+        <div class="container second-container">
+            <div class="container">
+                <!-- <div class="row"> <span>WHAT WE ARE TRYING TO ACHIVE</span> </div>-->
+                <div class="row problem-row">
+                    <div class="col-md-5"> <span>EASY SETUP</span>
+                        <br class="show-break">
+                        <br>
+                        <p>Welfie doesn't require pairing or authentication to setup. It is just as easy as plugging your earphone in your smartphone. We are using 3.5mm audio jack for sending data because it is common in almost all smartphone.</p>
+                    </div>
+                    <div class="col-md-7"><img src="img/setup.svg" alt="cat" class="img-responsive img-size"></div>
+                </div>
+                <div class="row problem-row">
+                    <div class="col-md-7"><img src="img/accuracy.svg" alt="cat" class="img-responsive img-size"></div>
+                    <div class="col-md-5"> <span>MEASUREMENT ACCURACY</span>
+                        <br class="show-break">
+                        <br>
+                        <p>White coat syndrome, cuff size or unwanted body movement can cause inaccuracy in BP measurements. Welfie uses machine learning to treat these problems carefully to improve the accuracy of measurements.</p>
+                    </div>
+                </div>
+                <div class="row problem-row">
+                    <div class="col-md-5"> <span>HEALTH PREDICTION</span>
+                        <br class="show-break">
+                        <br>
+                        <p>Patients are not proficient to make useful insight from their BP reading history but Welfie can and it will tell you when you should visit doctor.</p>
+                    </div>
+                    <div class="col-md-7"><img src="img/health.svg" alt="cat" class="img-responsive img-size"></div>
+                </div>
+                <div class="row problem-row">
+                    <div class="col-md-7"><img src="img/record.svg" alt="cat" class="img-responsive img-size"></div>
+                    <div class="col-md-5"> <span>KEEPING HISTORY</span>
+                        <br class="show-break">
+                        <br>
+                        <p>Patients diagnosed with chronic ailments are recommended to maintain their BP records for future analysis but physical recordings make it difficult. Also, tracking the history of more than one person can be challenging.
+                            <br>Welfie provides a better solution to maintain records. </p>
+                    </div>
+                </div>
+                <div class="row problem-row">
+                    <div class="col-md-5"> <span>SHARING HISTORY</span>
+                        <br class="show-break">
+                        <br>
+                        <p>It is crucial for some patient to regularly share their BP records with doctor but sharing physical records are difficult.
+                            <br>Welfie provides a platform to record and share measurements with doctor anytime.</p>
+                    </div>
+                    <div class="col-md-7"><img src="img/sharing.svg" alt="cat" class="img-responsive img-size"></div>
+                </div>
+                <div class="row problem-row">
+                    <div class="col-md-7"><img src="img/reminder.svg" alt="cat" class="img-responsive img-size"></div>
+                    <div class="col-md-5"> <span>REMINDERS</span>
+                        <br class="show-break">
+                        <br>
+                        <p>Patients often forget to take their daily medication and BP measurements , which may lead to some serious health issues.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="team" class="row">
+        <div class="container third-content">
+            <div class="container title">OUR TEAM</div>
+            <div class="container team">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="img/team/01.jpg" alt="" class="img-responsive img-profile" type="button" data-toggle="modal" data-target="#myModa1">
+                        <p class="team-member">SAMYA BAGCHI <br>
+                        <span class="team-position">Co-founder</span></p> 
+                        <p class="team-profile">Computer Scientist, IIIT Bangalore
+                            <br>Past: Siemens Research</p>
+                        <!-- Modal -->
+                        <div id="myModa1" class="modal" role="dialog">
+                            <div class="modal-dialog  modal-lg">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <img src="img/team/01.jpg" alt="" class="media-object img-modal">
+                                            </div>
+                                            <div class="media-body">
+                                                <h4 class="media-heading">SAMYA BAGCHI</h4>
+                                                <p class="modal-team-member">Computer Scientist, IIIT Bangalore
+                                                    <br>Past: Siemens Research</p>
+                                            </div>
+                                            <div class="media-right">
+                                                <p class="team-website"><a href="http://www.bsamya.com">www.bsamya.me</a></p>
+                                                <p class="social-icons">
+                                                    <a href="https://www.facebook.com/samyabagchi"><img src="img/facebook.png" alt="fb"></a>
+                                                    <a href="https://in.linkedin.com/in/samyabagchi"><img src="img/linkedin.png" alt="linkedin" style="margin-left:10px;"></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p class="modal-team-profile">
+                                            Samya is a quintessential mix of ideator, inventor and researcher. His prime interests lies in the field of machine learning, computer vision and neuromorphic computing and he is keen to learn any new technology that serves the purpose. His inventions in the field of program performance optimization and sorting algorithms on brain like chips are being considered for patenting by Siemens. He holds a Masters Degree from IIIT Bangalore with specialization in Computer Science. His thesis in the field of Computer Vision got accepted for publication at NCC 2014 held at IIT Kanpur, the leading national conference on communications, signal processing and networks. He also worked on SLAM robots and made a document search engine. During his B.Tech days he worked on genetic clustering algorithms at Saha Institute of Nuclear Physics, Kolkata.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                    </div>
+                    <div class="col-md-4">
+                        <img src="img/team/02.jpg" alt="" class="img-responsive img-profile" type="button" data-toggle="modal" data-target="#myModa2">
+                        <p class="team-member">RITWIK <br>
+                        <span class="team-position">Co-founder</span></p> 
+                        <p class="team-profile">College Dropout</p>
+                        <!-- Modal -->
+                        <div id="myModa2" class="modal" role="dialog">
+                            <div class="modal-dialog  modal-lg">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <img src="img/team/02.jpg" alt="" class="media-object img-modal">
+                                            </div>
+                                            <div class="media-body">
+                                                <h4 class="media-heading">RITWIK</h4>
+                                                <p class="modal-team-member">Hardware Engineer
+                                                    <br>College Dropout</p>
+                                            </div>
+                                            <div class="media-right">
+                                                <p class="team-website"><a href="http://www.ritwikg.com">www.ritwikg.com</a></p>
+                                                <p class="social-icons">
+                                                    <a href=""><img src="img/facebook.png" alt="fb"></a>
+                                                    <a href="https://in.linkedin.com/in/ritwik-g-85931446"><img src="img/linkedin.png" alt="linkedin" style="margin-left:10px;"></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p class="modal-team-profile">
+                                            ADD RITWIT DATA
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                    </div>
+                    <div class="col-md-4">
+                        <img src="img/team/04.jpg" alt="" class="img-responsive img-profile" type="button" data-toggle="modal" data-target="#myModa4">
+                        <p class="team-member">ABHINAV KUMAR <br>
+                        <span class="team-position">Co-founder</span></p>
+                        <p class="team-profile">Interaction Designer, IIT Bombay </p>
+                        <!-- Modal -->
+                        <div id="myModa4" class="modal" role="dialog">
+                            <div class="modal-dialog  modal-lg">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <img src="img/team/04.jpg" alt="" class="media-object img-modal">
+                                            </div>
+                                            <div class="media-body">
+                                                <h4 class="media-heading">ABHINAV KUMAR</h4>
+                                                <p class="modal-team-member">User Researcher
+                                                    <br>Interaction Designer, IIT Bombay</p>
+                                            </div>
+                                            <div class="media-right">
+                                                <p class="team-website">
+                                                    <a href="http://www.black-brain.com">
+                                                        <nobr>www.black‑brain.com</nobr>
+                                                    </a>
+                                                </p>
+                                                <p class="social-icons">
+                                                    <a href="https://www.facebook.com/blykira"><img src="img/facebook.png" alt="fb"></a>
+                                                    <a href="https://in.linkedin.com/in/xabhinav"><img src="img/linkedin.png" alt="linkedin" style="margin-left:10px;"></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p class="modal-team-profile">
+                                            Abhinav is a graduate from IDC, IIT Bombay. He has done his Master’s in Interaction Design. He is interested in brain computing interaction, physical computing and tangible interaction. He has designed and developed a brain controlled mouse and keyboard for physically challenged people as his master’s project. He has also designed and developed multimodal interactive play environment for kids as his master thesis.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                    </div>
+                </div>
+                <div class="row advisors-list">
+                    <div class="col-md-4">
+                        <img src="img/team/03.jpg" alt="" class="img-responsive img-profile" type="button" data-toggle="modal" data-target="#myModa3">
+                        <p class="team-member">DR. ABDUL SALAAM <br> <span class="team-position">Medical Advisor</span></p>
+                       
+                        <p class="team-profile">Medical Researcher, Senior Resident, KIMS Medical College M.B.B.S, M.D, Andhra Medical College</p>
+                        <!-- Modal -->
+                        <div id="myModa3" class="modal" role="dialog">
+                            <div class="modal-dialog  modal-lg">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <img src="img/team/03.jpg" alt="" class="media-object img-modal">
+                                            </div>
+                                            <div class="media-body">
+                                                <h4 class="media-heading">DR. ABDUL SALAAM</h4>
+                                                <p class="modal-team-member">M.B.B.S., M.D
+                                                    <br>Graduated from ASRAM Medical college, Eluru</p>
+                                            </div>
+                                            <div class="media-right">
+                                                <p class="team-website"><a href="mailto:drsalaam@welfie.in">drsalaam@welfie.in</a></p>
+                                                <p class="social-icons">
+                                                    <a href=""><img src="img/facebook.png" alt="fb"></a>
+                                                    <a href="https://in.linkedin.com/in/abdul-salaam-52a36246"><img src="img/linkedin.png" alt="linkedin" style="margin-left:10px;"></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p class="modal-team-profile"> Interested in Mind and behavioural sciences, took up Psychiatry in post graduation and completed Doctor in Medicine in Psychiatry from Andhra medical College, Visakhapatnam in 2014. Did one year residency at Rangaraya Medical College, Kakinada and later joined as Senior resident in the Department of Psychiatry, KIMS medical College, Amalapuram, Andhra Pradesh.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                    </div>
+                    <div class="col-md-4">
+                        <img src="img/team/05.png" alt="" class="img-responsive img-profile" type="button" data-toggle="modal" data-target="#myModa5">
+                        <p class="team-member">Sharat Satyanarayana <br><span class="team-position">Business Advisor</span></p>
+                        
+                        <p class="team-profile">University of Strathclyde <br>Master- Business Management</p>
+                        <!-- Modal -->
+                        <div id="myModa5" class="modal" role="dialog">
+                            <div class="modal-dialog  modal-lg">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <img src="img/team/05.png" alt="" class="media-object img-modal">
+                                            </div>
+                                            <div class="media-body">
+                                                <h4 class="media-heading">Sharat Satyanarayana</h4>
+                                                <p class="modal-team-member">Master- Business Management
+                                                    <br>Graduated from University of Strathclyde</p>
+                                            </div>
+                                            <div class="media-right">
+                                                <p class="team-website"><a href="#">nolinkshere</a></p>
+                                                <p class="social-icons">
+                                                    <a href="https://www.facebook.com/bratrat"><img src="img/facebook.png" alt="fb"></a>
+                                                    <a href="https://in.linkedin.com/in/sharats"><img src="img/linkedin.png" alt="linkedin" style="margin-left:10px;"></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p class="modal-team-profile"> Sharat Satyanarayana is a Startup Enthusiast & Go-to-market guy. He is a rare breed of marketing professional by religion. Being a blend of a sophisticated networker and a grounded process oriented Marketing professional, makes him actually sucessful with tough markets, products. He is not just an asset to any orgnaisation, but to all his team members. His creativity, resourcefulness, and ability to see a project through, makes him distinctive and successful.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="row full-height">
+        <div class="container ">
+            <div class="container fourth-content">
+                <div class="col-md-12 contact-us-title"> FEEL FREE TO CONTACT US </div>
+                <hr size="10" class="col-md-6 col-md-offset-3">
+                <hr size="10" class="col-md-4 col-md-offset-4">
+                <div class="col-md-6">
+                    <div class="left-pane ">
+                        <h3>ADDRESS</h3>
+                        <p> Welfie Technologies Pvt. Ltd.
+                            <br>65, 1st Floor, 4th Main Road,
+                            <br>Domlur 2nd Stage, Domlur,
+                            <br>Bengaluru, Karnataka, India - 560071</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="right-pane address-text">
+                        <h3>EMAIL ID</h3>
+                        <p>contact@welfie.in</p>
+                        <p>+91-8197661152</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+</body>
 
-    <script src="js/owl.carousel.js"></script>
-
-    <!-- Javascripts
-    ================================================== -->
-    <script type="text/javascript" src="js/main.js"></script>
-
-  </body>
 </html>

@@ -1,0 +1,418 @@
+  @font-face { 
+    font-family: Roboto; 
+    src: url('fonts/Roboto-Thin.TTF'); 
+    src: url('fonts/Roboto-ThinItalic.TTF'); 
+    src: url('fonts/Roboto-Regular.TTF'); 
+    src: url('fonts/Roboto-Medium.TTF'); 
+    src: url('fonts/Roboto-Light.TTF'); 
+    src: url('fonts/Roboto-Bold.TTF'); 
+    src: url('fonts/Roboto-Black.TTF');  
+} 
+
+ html,
+ body {
+     height: 100%;
+     overflow-x: hidden;
+ }
+ 
+ .nav.navbar-nav.navbar-right li a {
+     font-family: Roboto, sans-serif;
+     font-weight: 500;
+     color: #86C8E1;
+ }
+ 
+ .navbar-brand span {
+     font-family: Roboto, sans-serif;
+     font-weight: 300;
+     color: #5DB34A;
+     letter-spacing: 8px;
+     font-size: 1em;
+ }
+ 
+ .navbar-toggle:hover,
+ .navbar-toggle:active,
+ .navbar-toggle:focus {
+     border: none !important;
+     outline: none !important;
+     background: none !important;
+ }
+ 
+ .bg-disable {
+     background: white;
+     border: none;
+ }
+ 
+ .full-height {
+    margin-top: 40px;
+     padding-top: 30px;
+     height: 100%;
+     overflow-x: hidden;
+ }
+
+.pre-boooking{
+    margin-top: 4em;
+}
+
+.pre-boooking input{
+    height: 3em;
+    font-family: Roboto, sans-serif;
+    font-weight: 300; 
+    font-size: 1.1em;
+}
+
+.promo{ 
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 1.5em;
+    color: #5DB34A;
+    margin-bottom: 0.5em;
+}
+
+#get-email-id{ 
+    width: 65%; 
+    margin: 0px;
+    border-radius: 5px 0  0 5px;  
+    border: 1px solid #9e9e9e;
+    padding-left: 10px;
+}
+
+ #book-now{
+    background-color: #5DB34A;
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    color: #fff; 
+    font-size: 1.1em;
+    border-radius: 0 5px 5px  0 ;  
+    border: 1px solid #9f9f9f;
+    width: 25%;
+    margin-left: -5px;
+ }
+
+ .pre-boooking span:hover{
+    cursor: pointer;
+ }
+
+ 
+ #home {
+     background-image: url('../img/welfie-sketch.png');
+     background-repeat: no-repeat;
+     background-position: center;
+ }
+ 
+ #home b {
+     color: #5DB34A;
+ }
+ 
+ .on-device {
+     display: none;
+ }
+ 
+ .main-text {
+     text-align: center;
+     padding-top: 6em;
+ }
+ 
+ .main-text p>span {
+     font-family: Roboto, sans-serif;
+     font-weight: 300;
+     color: #00053A;
+     font-size: 2em;
+ }
+ 
+ .main-text-title {
+     font-family: Roboto, sans-serif;
+     font-weight: 300;
+     color: #00053A;
+     font-size: 8em;
+ }
+ 
+ .main-text-sub-title {
+     font-family: Roboto, sans-serif;
+     font-weight: 300;
+     color: #00053A;
+     font-size: 1em;
+     letter-spacing: 0.5em;
+     margin-bottom: 4em;
+ }
+ 
+ #product {
+     margin-top: -10em;
+ }
+ 
+ #product .img-size {
+     width: 300px;
+     height: 300px;
+     margin: 0 auto;
+ }
+ 
+ #product span {
+     font-family: Roboto, sans-serif;
+     font-weight: 500;
+     color: #5DB34A;
+     font-size: 2em;
+ }
+ 
+ #product p {
+     font-family: Roboto, sans-serif;
+     font-weight: 300;
+     color: #00053A;
+     font-size: 1.5em;
+ }
+ 
+ .problem-row {
+     margin-top: 10em;
+     margin-bottom: 10em;
+ }
+ 
+ #team .img-profile {
+     width: 100px;
+     height: 100px;
+ }
+ 
+ .third-content {
+     padding-top: 70px;
+ }
+ 
+ .title {
+     text-align: center;
+     font-family: Roboto, sans-serif;
+     font-weight: 300;
+     font-size: 3em;
+ }
+ 
+ .fourth-content {
+     text-align: center;
+ }
+ 
+ #team .team {
+     padding-top: 30px;
+ }
+ 
+ #team .img-profile {
+     margin: 0 auto;
+ }
+ 
+ #team .img-profile:hover {
+     opacity: 0.5;
+     cursor: pointer;
+ }
+ 
+ #team .team-member {
+     padding-top: 10px;
+     text-align: center;
+     font-family: Roboto, sans-serif;
+     font-weight: 500;
+     font-size: 1em;
+ }
+ #team .team-position{
+    text-align: center;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 1em;
+ }
+ 
+ #team .team-profile {
+     text-align: center;
+     font-family: Roboto, sans-serif;
+     font-weight: 300;
+     font-size: 1em;
+ }
+ 
+ #team .advisors-list{
+    margin-top: 2em;
+ }
+
+ #team .modal-title {
+     font-family: Roboto, sans-serif;
+     font-weight: 500;
+     font-size: 1.5em;
+ }
+ 
+ #team .modal-team-member {
+     font-family: Roboto, sans-serif;
+     font-weight: 400;
+     font-size: 1em;
+     color: #0CA7F2;
+ }
+ 
+ #team .modal-team-profile {
+     font-family: Roboto, sans-serif;
+     font-weight: 300;
+     font-size: 1.2em;
+ }
+ 
+ #team .social-icons img {
+     width: 25px;
+     height: 25px;
+     padding: 5px;
+     border: 1px solid rgba(0, 0, 0, 0.2);
+     border-radius: 5px;
+ }
+ 
+ #team .team-website a {
+     font-family: Roboto, sans-serif;
+     font-weight: 300;
+     text-decoration: none;
+     font-size: 1em;
+     color: #74CB33;
+ }
+ 
+ #team .img-modal {
+     width: 64px;
+     height: 64px;
+ }
+ 
+ #team .details {}
+ 
+ .fourth-content {
+     margin: 0 auto;
+ }
+ 
+ #contact .contact-us-title {
+     padding-top: 2em;
+     text-align: center;
+     font-family: Roboto, sans-serif;
+     font-weight: 300;
+     text-decoration: none;
+     font-size: 3em;
+     margin-bottom: 1em;
+ }
+ 
+ #contact .left-pane {
+     font-family: Roboto, sans-serif;
+     font-weight: 300;
+     margin: 0 auto;
+     font-size: 1em;
+ }
+ 
+ #contact .right-pane {
+     font-family: Roboto, sans-serif;
+     font-weight: 300;
+     margin: 0 auto;
+     font-size: 1em;
+ }
+ 
+ #contact .left-pane p {
+     font-family: Roboto, sans-serif;
+     font-weight: 300;
+     margin: 0 auto;
+     font-size: 1.3em;
+ }
+ 
+ #contact .right-pane p {
+     font-family: Roboto, sans-serif;
+     font-weight: 300;
+     margin: 0 auto;
+     font-size: 1.3em;
+ }
+ 
+ #contact .col-md-4 {
+     margin-bottom: 4em;
+ }
+ 
+ hr {
+     margin-top: 4px;
+     margin-bottom: 4px;
+     background-color: #36D7B7;
+     height: 2px;
+ }
+ /*---------------------------*/
+ 
+ @media (max-width: 767px) {
+     .navbar-toggle {
+         border: none;
+         outline: none;
+         background: none !important;
+     }
+     .main-text {
+         text-align: center;
+         padding-top: 3em;
+     }
+     .main-text p>span {
+         font-family: Roboto, sans-serif;
+         font-weight: 300;
+         color: #00053A;
+         font-size: 1em;
+         letter-spacing: 2px;
+     }
+     .main-text-title {
+         font-family: Roboto, sans-serif;
+         font-weight: 300;
+         color: #00053A;
+         font-size: 4em;
+     }
+     .main-text-sub-title {
+         font-family: Roboto, sans-serif;
+         font-weight: 300;
+         color: #00053A;
+         font-size: 0.5em;
+         letter-spacing: 0.5em;
+         margin-bottom: 4em;
+     }
+     .on-device {
+         display: none;
+     }
+     .show-break {
+         display: none;
+     }
+     #product {
+         margin-top: 0em;
+     }
+     #product span {
+         font-family: Roboto, sans-serif;
+         font-weight: 500;
+         color: #5DB34A;
+         font-size: 1em;
+     }
+     #product p {
+         font-family: Roboto, sans-serif;
+         font-weight: 300;
+         color: #00053A;
+         font-size: 1em;
+     }
+     .problem-row {
+         margin-top: 1em;
+         margin-bottom: 1em;
+     }
+     .img-size {
+         display: none;
+     }
+     .title {
+        margin-top: 0px;
+         text-align: center;
+         font-family: Roboto, sans-serif;
+         font-weight: 500;
+         font-size: 1.5em;
+ }
+     #team .full-height {
+         height: auto;
+     }
+     #contact .contact-us-title {
+         font-size: 1.2em;
+         font-weight: 500;
+     }
+ 
+     hr{
+        display: none;
+     }
+     #contact .left-pane h3{
+         font-family: Roboto, sans-serif;
+         font-weight: 500; 
+         font-size: 1.2em;
+     }
+     #contact .right-pane h3{
+         font-family: Roboto, sans-serif;
+         font-weight: 500; 
+         font-size: 1.2em;
+     }
+     #contact .left-pane p {
+         font-family: Roboto, sans-serif;
+         font-weight: 300; 
+         font-size: 1.0em;
+     }
+     #contact .right-pane p {
+         font-family: Roboto, sans-serif;
+         font-weight: 300; 
+         font-size: 1.0em;
+     }
+ }
