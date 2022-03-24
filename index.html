@@ -2,363 +2,287 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>WELFIE, your wellness selfie</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/custom.css" rel="stylesheet">
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/jpg" href="/img/favicon.svg" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Welfie: take you healh selfie</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top bg-disable">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#home">
-                    <span><img src="img/welfie.png"></span>
+    <nav class="fixed inset-x-0 z-10 nav bg-transparent transition duration-300">
+        <div class="container md:max-w-screen-2xl mx-auto md:px-24 px-5">
+            <!-- logo -->
+            <div class="flex justify-between items-center">
+                <a href="/" class="flex">
+                    <img src="./img/logo.svg"
+                        class="object-contain brand-logo transition duration-500 h-16 md:h-16 md:p-4" alt="">
+                    <div class="flex flex-col justify-center">
+                        <span class="text-2xl font-semibold text-indigo-700 italic brand-name">Welfie</span>
+                    </div>
                 </a>
+
+                <!-- secondary nav -->
+                <div class="text-gray-500 text-xs">
+                    <a href="#product" class="p-5 hover:text-blue-600 font-semibold transition duration-300">PRODUCT</a>
+                    <a href="#team" class="p-5 hover:text-blue-600 font-semibold transition duration-300">TEAM</a>
+                    <a href="#" class="p-5 hover:text-blue-600 font-semibold transition duration-300">BLOGS</a>
+                    <a href="#contact" class="p-5 hover:text-blue-600 font-semibold transition duration-300">CONTACT
+                        US</a>
+                </div>
+
+                <div class="md:hidden">
+                    <button class="btn-mobile flex px-5">
+                        <img src="./img/menu.svg" class="object-contain h-5" alt="">
+                    </button>
+                </div>
             </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <!-- <ul class="nav navbar-nav">
-                        <li><a href="#">Link1</a></li>
-                        <li><a href="#">Link2</a></li>
-                        <li><a href="#">Link3</a></li>
-                    </ul> -->
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="nav-width"><a class="page-scroll" href="#home">HOME</a></li>
-                    <li class="nav-width"><a class="page-scroll" href="#product">PRODUCT</a></li>
-                    <li class="nav-width"><a class="page-scroll" href="#team">TEAM</a></li>
-                    <li class="nav-width"><a class="page-scroll" href="blogPage.html">BLOG</a></li>
-                    <li class="nav-width"><a class="page-scroll" href="#contact">CONTACT US</a></li>
-                </ul>
-            </div>
+        </div>
+        <div class="hidden mobile-menu">
+            <a href="#" class="block p-5 hover:bg-gray-100 hover:text-blue-600 transition duration-300">LAB</a>
+            <a href="#" class="block p-5 hover:bg-gray-100 hover:text-blue-600 transition duration-300">SERVICES</a>
+            <a href="#" class="block p-5 hover:bg-gray-100 hover:text-blue-600 transition duration-300">PROJECTS</a>
+            <a href="#" class="block p-5 hover:bg-gray-100 hover:text-blue-600 transition duration-300">XPERIMENTS</a>
         </div>
     </nav>
-    <section id="home" class="row full-height">
-        <div class="container">
-            <div class="container first-container">
-                <div class="main-text">
-                    <p class="main-text-title">WELFIE</p>
-                    <p class="main-text-sub-title">TAKE YOUR WELLNESS SELFIE</p>
-                    <p><span>Introducing a smartphone based intelligent <b>BP machine</b></span></p>
-                    <div class="pre-boooking input-group col-md-4 col-md-offset-4"> 
-                    <div class="promo"> Preorder your device now! </div>
-                       <form class="" action="http://welfie.in:5000/send"  method="POST">
-                            <input id="get-email-id" type="text" name="email_address"/>
-                            <input type="submit" value="Book Now" name="submit" id="book-now" > 
+    <div class="bg-hero-mobile-jpg md:bg-hero bg-cover bg-center bg-no-repeat">
+        <div class="container md:max-w-screen-2xl mx-auto  md:px-32 px-5 h-screen flex items-center">
+            <div class="grid md:grid-cols-12 md:grid-flow-col gap-10  items-center">
+                <div class="col-span-6 ">
+                    <p class="font-bold text-7xl text-indigo-500 pb-5">
+                        WELFIE
+                    </p>
+                    <p class="md:text-5xl font-light">
+                        <span class="leading-tight"> $2 Intelligent BP machine that work with your smartphone.</span>
+                    </p>
 
-                            </input>
-                       </form>
+                    <div class="pt-10 flex gap-2 flex-col md:flex-row">
+                        <a href="https://forms.zohopublic.in/pritam/form/QuickAuditRequest/formperma/3VMwl1QpiUl74l9SKhJsh1GbJihD5F7RO1pHcvZqH5A"
+                            class="px-10 md:px-20 py-4 bg-indigo-200 text-indigo-700 rounded-full
+                        hover:bg-indigo-700 hover:text-white transition duration-300 tracking-widest font-semibold
+                        group" target="_blank">
+                            PRE ORDER NOW
+                            <span class="group-hover:text-4xl"><i class="fa fa-arrow-right"></i></span>
+                        </a>
                     </div>
-
-                </div><img src="img/welfie-sketch.png" class="img-responsive on-device" alt=""> </div>
+                </div>
+                <div class="col-span-4">
+                    <!-- <div class="flex">
+                        <img src="./img/person-2.png" class="object-cover" alt="">
+                    </div> -->
+                </div>
+            </div>
         </div>
-    </section>
-    <section id="product" class="row">
-        <div class="container second-container">
-            <div class="container">
-                <!-- <div class="row"> <span>WHAT WE ARE TRYING TO ACHIVE</span> </div>-->
-                <div class="row problem-row">
-                    <div class="col-md-5"> <span>EASY SETUP</span>
-                        <br class="show-break">
-                        <br>
-                        <p>Welfie doesn't require pairing or authentication to setup. It is just as easy as plugging your earphone in your smartphone. We are using 3.5mm audio jack for sending data because it is common in almost all smartphone.</p>
+    </div>
+    <div class="container md:max-w-screen-2xl mx-auto md:px-32 px-5">
+        <!-- Easy Setup -->
+        <div class="md:py-32 h-screen flex items-center" id="product">
+            <div class="grid gap-5 md:grid-cols-6 md:grid-flow-col md:gap-4">
+                <div class="md:col-span-4">
+                    <ul>
+                        <li class="py-2">
+                            <p class="text-4xl md:text-5xl">
+                                <span class="font-bold text-5xl text-indigo-500">EASY SETUP</span>
+                            </p>
+                        </li>
+                        <li class="py-2">
+                            <p class="text-4xl md:text-5xl">
+                                <span class="font-bold text-5xl text-indigo-500">ACCURATE MEASUREMENT</span>
+                            </p>
+                        </li>
+                        <li class="py-2">
+                            <p class="text-4xl md:text-5xl">
+                                <span class="font-bold text-5xl text-indigo-500">HEALTH PREDICTION</span>
+                            </p>
+                        </li>
+                        <li class="py-2">
+                            <p class="text-4xl md:text-5xl">
+                                <span class="font-bold text-5xl text-indigo-500">KEEPING HISTORY </span>
+                            </p>
+                        </li>
+                        <li class="py-2">
+                            <p class="text-4xl md:text-5xl">
+                                <span class="font-bold text-5xl text-indigo-500">SHARING HISTORY </span>
+                            </p>
+                        </li>
+                        <li class="py-2">
+                            <p class="text-4xl md:text-5xl">
+                                <span class="font-bold text-5xl text-indigo-500">REMINDERS </span>
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="pt-3 pb-10 flex gap-2 flex-col md:flex-row">
+                        <a href="https://forms.zohopublic.in/pritam/form/QuickAuditRequest/formperma/3VMwl1QpiUl74l9SKhJsh1GbJihD5F7RO1pHcvZqH5A"
+                            class="px-10 md:px-20 py-4 bg-indigo-200 text-indigo-700 rounded-full
+                        hover:bg-indigo-700 hover:text-white transition duration-700 tracking-widest font-semibold
+                        group" target="_blank">
+                            PRE ORDER NOW
+                            <span class="group-hover:text-4xl"><i class="fa fa-arrow-right"></i></span>
+                        </a>
                     </div>
-                    <div class="col-md-7"><img src="img/setup.svg" alt="cat" class="img-responsive img-size"></div>
                 </div>
-                <div class="row problem-row">
-                    <div class="col-md-7"><img src="img/accuracy.svg" alt="cat" class="img-responsive img-size"></div>
-                    <div class="col-md-5"> <span>MEASUREMENT ACCURACY</span>
-                        <br class="show-break">
-                        <br>
-                        <p>White coat syndrome, cuff size or unwanted body movement can cause inaccuracy in BP measurements. Welfie uses machine learning to treat these problems carefully to improve the accuracy of measurements.</p>
+                <div class="md:col-span-3 text-2xl">
+                    <p>
+                        Welfie doesn't require pairing or authentication to setup. It is just as easy as plugging
+                        your earphone in your smartphone. We are using 3.5mm audio jack for sending data because it
+                        is common in almost all smartphone.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="md:py-32 py-20 my-5 md:rounded-xl" id="team">
+            <div class="grid md:grid-cols-12 md:grid-flow-col gap-10">
+                <div class="col-span-3 p-3">
+                    <div class="py-3">
+                        <img class="rounded-full filter grayscale hover:filter-none" src="./img/samya.jpg" alt="">
+                        <p class="text-2xl font-semibold">Samhya bagchi</p>
+                        <p class="font-semibold text-indigo-700"><span>Founder & CEO</span></p>
+                        <p class="text-sm">
+                            Computer Scientist, IIIT Bangalore
+                        </p>
                     </div>
                 </div>
-                <div class="row problem-row">
-                    <div class="col-md-5"> <span>HEALTH PREDICTION</span>
-                        <br class="show-break">
-                        <br>
-                        <p>Patients are not proficient to make useful insight from their BP reading history but Welfie can and it will tell you when you should visit doctor.</p>
-                    </div>
-                    <div class="col-md-7"><img src="img/health.svg" alt="cat" class="img-responsive img-size"></div>
-                </div>
-                <div class="row problem-row">
-                    <div class="col-md-7"><img src="img/record.svg" alt="cat" class="img-responsive img-size"></div>
-                    <div class="col-md-5"> <span>KEEPING HISTORY</span>
-                        <br class="show-break">
-                        <br>
-                        <p>Patients diagnosed with chronic ailments are recommended to maintain their BP records for future analysis but physical recordings make it difficult. Also, tracking the history of more than one person can be challenging.
-                            <br>Welfie provides a better solution to maintain records. </p>
+                <div class="col-span-3 p-3">
+                    <div class="py-3">
+                        <img class="rounded-full filter grayscale hover:filter-none" src="./img/ritwik.jpg" alt="">
+                        <p class="text-2xl font-semibold">Ritwik </p>
+                        <p class="font-semibold text-indigo-700"><span>Founder & CTO</span></p>
+                        <p class="text-sm">
+                            Electronics Enigneer, Dropout
+                        </p>
                     </div>
                 </div>
-                <div class="row problem-row">
-                    <div class="col-md-5"> <span>SHARING HISTORY</span>
-                        <br class="show-break">
-                        <br>
-                        <p>It is crucial for some patient to regularly share their BP records with doctor but sharing physical records are difficult.
-                            <br>Welfie provides a platform to record and share measurements with doctor anytime.</p>
+                <div class="col-span-3 p-3">
+                    <img class="rounded-full filter grayscale hover:filter-none" src="./img/abhinav.jpg" alt="">
+                    <div class="py-3">
+                        <p class="text-2xl font-semibold">Abhinav Kr</p>
+                        <p class="font-semibold text-indigo-700"><span>Founder & COO</span></p>
+                        <p class="text-sm">
+                            <span>Mechanical Engineer, IIIT DM Jabalpur</span>
+                            <span>M.Des Interaction Design, IIT Bombay</span>
+                        </p>
                     </div>
-                    <div class="col-md-7"><img src="img/sharing.svg" alt="cat" class="img-responsive img-size"></div>
                 </div>
-                <div class="row problem-row">
-                    <div class="col-md-7"><img src="img/reminder.svg" alt="cat" class="img-responsive img-size"></div>
-                    <div class="col-md-5"> <span>REMINDERS</span>
-                        <br class="show-break">
-                        <br>
-                        <p>Patients often forget to take their daily medication and BP measurements , which may lead to some serious health issues.</p>
+                <div class="col-span-3 p-3">
+                    <img class="rounded-full filter grayscale hover:filter-none" src="./img/salam.jpg" alt="">
+                    <div class="py-3">
+                        <p class="text-2xl font-semibold">Dr. Abdul Salaam</p>
+                        <p class="font-semibold text-indigo-700"><span>Medical Advisor </span></p>
+                        <p class="text-sm">
+                            <span>Medical Researcher, Senior Resident, KIMS Medical
+                                College
+                                M.B.B.S,
+                                M.D, Andhra Medical
+                                College</span>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <section id="team" class="row">
-        <div class="container third-content">
-            <div class="container title">OUR TEAM</div>
-            <div class="container team">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img src="img/team/01.jpg" alt="" class="img-responsive img-profile" type="button" data-toggle="modal" data-target="#myModa1">
-                        <p class="team-member">SAMYA BAGCHI <br>
-                        <span class="team-position">Co-founder</span></p> 
-                        <p class="team-profile">Computer Scientist, IIIT Bangalore
-                            <br>Past: Siemens Research</p>
-                        <!-- Modal -->
-                        <div id="myModa1" class="modal" role="dialog">
-                            <div class="modal-dialog  modal-lg">
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <div class="media">
-                                            <div class="media-left">
-                                                <img src="img/team/01.jpg" alt="" class="media-object img-modal">
-                                            </div>
-                                            <div class="media-body">
-                                                <h4 class="media-heading">SAMYA BAGCHI</h4>
-                                                <p class="modal-team-member">Computer Scientist, IIIT Bangalore
-                                                    <br>Past: Siemens Research</p>
-                                            </div>
-                                            <div class="media-right">
-                                                <p class="team-website"><a href="http://www.bsamya.com">www.bsamya.me</a></p>
-                                                <p class="social-icons">
-                                                    <a href="https://www.facebook.com/samyabagchi"><img src="img/facebook.png" alt="fb"></a>
-                                                    <a href="https://in.linkedin.com/in/samyabagchi"><img src="img/linkedin.png" alt="linkedin" style="margin-left:10px;"></a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p class="modal-team-profile">
-                                            Samya is a quintessential mix of ideator, inventor and researcher. His prime interests lies in the field of machine learning, computer vision and neuromorphic computing and he is keen to learn any new technology that serves the purpose. His inventions in the field of program performance optimization and sorting algorithms on brain like chips are being considered for patenting by Siemens. He holds a Masters Degree from IIIT Bangalore with specialization in Computer Science. His thesis in the field of Computer Vision got accepted for publication at NCC 2014 held at IIT Kanpur, the leading national conference on communications, signal processing and networks. He also worked on SLAM robots and made a document search engine. During his B.Tech days he worked on genetic clustering algorithms at Saha Institute of Nuclear Physics, Kolkata.
-                                        </p>
-                                    </div>
-                                </div>
+    </div>
+    <div class="bg-indigo-700">
+        <div class="container md:max-w-screen-2xl mx-auto md:px-32 px-5 ">
+            <!-- contact us -->
+            <div class="grid gap-5 md:grid-cols-6 md:grid-rows-1 md:grid-flow-col md:gap-4 text-white py-32"
+                id="contact">
+                <div class="col-span-3">
+                    <div class="pb-10">
+                        <span class="font-bold text-5xl text-indigo-500">CONTACT US</span>
+                    </div>
+                    <form class="w-full">
+                        <div class="relative w-2/3">
+                            <input type="text" class="p-5 w-full rounded-full z-0 focus:shadow focus:outline-none"
+                                placeholder="name@email.com">
+                            <div class="absolute top-2 right-2">
+                                <button class="text-white rounded-full bg-indigo-700
+                                        hover:bg-indigo-900 px-5 py-3">
+                                    <i class="fa fa-paper-plane px-2"></i>
+                                    SEND
+                                </button>
                             </div>
                         </div>
-                        <!-- Modal -->
-                    </div>
-                    <div class="col-md-4">
-                        <img src="img/team/02.jpg" alt="" class="img-responsive img-profile" type="button" data-toggle="modal" data-target="#myModa2">
-                        <p class="team-member">RITWIK <br>
-                        <span class="team-position">Co-founder</span></p> 
-                        <p class="team-profile">College Dropout</p>
-                        <!-- Modal -->
-                        <div id="myModa2" class="modal" role="dialog">
-                            <div class="modal-dialog  modal-lg">
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <div class="media">
-                                            <div class="media-left">
-                                                <img src="img/team/02.jpg" alt="" class="media-object img-modal">
-                                            </div>
-                                            <div class="media-body">
-                                                <h4 class="media-heading">RITWIK</h4>
-                                                <p class="modal-team-member">Hardware Engineer
-                                                    <br>College Dropout</p>
-                                            </div>
-                                            <div class="media-right">
-                                                <p class="team-website"><a href="http://www.ritwikg.com">www.ritwikg.com</a></p>
-                                                <p class="social-icons">
-                                                    <a href=""><img src="img/facebook.png" alt="fb"></a>
-                                                    <a href="https://in.linkedin.com/in/ritwik-g-85931446"><img src="img/linkedin.png" alt="linkedin" style="margin-left:10px;"></a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p class="modal-team-profile">
-                                            ADD RITWIT DATA
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Modal -->
-                    </div>
-                    <div class="col-md-4">
-                        <img src="img/team/04.jpg" alt="" class="img-responsive img-profile" type="button" data-toggle="modal" data-target="#myModa4">
-                        <p class="team-member">ABHINAV KUMAR <br>
-                        <span class="team-position">Co-founder</span></p>
-                        <p class="team-profile">Interaction Designer, IIT Bombay </p>
-                        <!-- Modal -->
-                        <div id="myModa4" class="modal" role="dialog">
-                            <div class="modal-dialog  modal-lg">
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <div class="media">
-                                            <div class="media-left">
-                                                <img src="img/team/04.jpg" alt="" class="media-object img-modal">
-                                            </div>
-                                            <div class="media-body">
-                                                <h4 class="media-heading">ABHINAV KUMAR</h4>
-                                                <p class="modal-team-member">User Researcher
-                                                    <br>Interaction Designer, IIT Bombay</p>
-                                            </div>
-                                            <div class="media-right">
-                                                <p class="team-website">
-                                                    <a href="http://www.black-brain.com">
-                                                        <nobr>www.black‑brain.com</nobr>
-                                                    </a>
-                                                </p>
-                                                <p class="social-icons">
-                                                    <a href="https://www.facebook.com/blykira"><img src="img/facebook.png" alt="fb"></a>
-                                                    <a href="https://in.linkedin.com/in/xabhinav"><img src="img/linkedin.png" alt="linkedin" style="margin-left:10px;"></a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p class="modal-team-profile">
-                                            Abhinav is a graduate from IDC, IIT Bombay. He has done his Master’s in Interaction Design. He is interested in brain computing interaction, physical computing and tangible interaction. He has designed and developed a brain controlled mouse and keyboard for physically challenged people as his master’s project. He has also designed and developed multimodal interactive play environment for kids as his master thesis.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Modal -->
-                    </div>
+                    </form>
                 </div>
-                <div class="row advisors-list">
-                    <div class="col-md-4">
-                        <img src="img/team/03.jpg" alt="" class="img-responsive img-profile" type="button" data-toggle="modal" data-target="#myModa3">
-                        <p class="team-member">DR. ABDUL SALAAM <br> <span class="team-position">Medical Advisor</span></p>
-                       
-                        <p class="team-profile">Medical Researcher, Senior Resident, KIMS Medical College M.B.B.S, M.D, Andhra Medical College</p>
-                        <!-- Modal -->
-                        <div id="myModa3" class="modal" role="dialog">
-                            <div class="modal-dialog  modal-lg">
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <div class="media">
-                                            <div class="media-left">
-                                                <img src="img/team/03.jpg" alt="" class="media-object img-modal">
-                                            </div>
-                                            <div class="media-body">
-                                                <h4 class="media-heading">DR. ABDUL SALAAM</h4>
-                                                <p class="modal-team-member">M.B.B.S., M.D
-                                                    <br>Graduated from ASRAM Medical college, Eluru</p>
-                                            </div>
-                                            <div class="media-right">
-                                                <p class="team-website"><a href="mailto:drsalaam@welfie.in">drsalaam@welfie.in</a></p>
-                                                <p class="social-icons">
-                                                    <a href=""><img src="img/facebook.png" alt="fb"></a>
-                                                    <a href="https://in.linkedin.com/in/abdul-salaam-52a36246"><img src="img/linkedin.png" alt="linkedin" style="margin-left:10px;"></a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p class="modal-team-profile"> Interested in Mind and behavioural sciences, took up Psychiatry in post graduation and completed Doctor in Medicine in Psychiatry from Andhra medical College, Visakhapatnam in 2014. Did one year residency at Rangaraya Medical College, Kakinada and later joined as Senior resident in the Department of Psychiatry, KIMS medical College, Amalapuram, Andhra Pradesh.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Modal -->
-                    </div>
-                    <div class="col-md-4">
-                        <img src="img/team/05.png" alt="" class="img-responsive img-profile" type="button" data-toggle="modal" data-target="#myModa5">
-                        <p class="team-member">Sharat Satyanarayana <br><span class="team-position">Business Advisor</span></p>
-                        
-                        <p class="team-profile">University of Strathclyde <br>Master- Business Management</p>
-                        <!-- Modal -->
-                        <div id="myModa5" class="modal" role="dialog">
-                            <div class="modal-dialog  modal-lg">
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <div class="media">
-                                            <div class="media-left">
-                                                <img src="img/team/05.png" alt="" class="media-object img-modal">
-                                            </div>
-                                            <div class="media-body">
-                                                <h4 class="media-heading">Sharat Satyanarayana</h4>
-                                                <p class="modal-team-member">Master- Business Management
-                                                    <br>Graduated from University of Strathclyde</p>
-                                            </div>
-                                            <div class="media-right">
-                                                <p class="team-website"><a href="#">nolinkshere</a></p>
-                                                <p class="social-icons">
-                                                    <a href="https://www.facebook.com/bratrat"><img src="img/facebook.png" alt="fb"></a>
-                                                    <a href="https://in.linkedin.com/in/sharats"><img src="img/linkedin.png" alt="linkedin" style="margin-left:10px;"></a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p class="modal-team-profile"> Sharat Satyanarayana is a Startup Enthusiast & Go-to-market guy. He is a rare breed of marketing professional by religion. Being a blend of a sophisticated networker and a grounded process oriented Marketing professional, makes him actually sucessful with tough markets, products. He is not just an asset to any orgnaisation, but to all his team members. His creativity, resourcefulness, and ability to see a project through, makes him distinctive and successful.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Modal -->
-                    </div>
+                <div class="col-span-3 px-10">
+                    <span class="font-bold text-3xl text-indigo-500 italic">"Welfie is a life changing
+                        product."</span>
                 </div>
             </div>
         </div>
-    </section>
-    <section id="contact" class="row full-height">
-        <div class="container ">
-            <div class="container fourth-content">
-                <div class="col-md-12 contact-us-title"> FEEL FREE TO CONTACT US </div>
-                <hr size="10" class="col-md-6 col-md-offset-3">
-                <hr size="10" class="col-md-4 col-md-offset-4">
-                <div class="col-md-6">
-                    <div class="left-pane ">
-                        <h3>ADDRESS</h3>
-                        <p> Welfie Technologies Pvt. Ltd.
-                            <br>65, 1st Floor, 4th Main Road,
-                            <br>Domlur 2nd Stage, Domlur,
-                            <br>Bengaluru, Karnataka, India - 560071</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="right-pane address-text">
-                        <h3>EMAIL ID</h3>
-                        <p>contact@welfie.in</p>
-                        <p>+91-8197661152</p>
-                    </div>
-                </div>
+    </div>
+    <div class="container md:max-w-screen-2xl mx-auto md:px-32 px-5">
+        <!-- footer -->
+        <footer class="flex flex-col">
+            <div class="grid md:grid-cols-4 gap-10 md:gap-4 py-32">
+                <ul class="flex gap-3 flex-col text-sm">
+                    <li>
+                        <h1 class="font-bold">SITEMAP</h1>
+                    </li>
+                    <li class="flex flex-col gap-3 md:gap-1">
+                        <a href="">TERMS & CONDITIONS</a>
+                        <a href="">ABOUT US</a>
+                    </li>
+                </ul>
+                <ul class="flex gap-3 flex-col text-sm">
+                    <li>
+                        <h1 class="font-semibold">OUR WORK</h1>
+                    </li>
+                    <li class="flex gap-10">
+                        <a target="_blank" class="hover:text-red-500" href="https://www.instagram.com/welfielabs">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a target="_blank" class="hover:text-red-500" href="https://www.github.com/welfielabs">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="flex gap-3 flex-col text-sm">
+                    <li>
+                        <h1 class="font-semibold">CONTACT US</h1>
+                    </li>
+                    <li class="flex flex-col  gap-2">
+                        <a target="_blank" href="mailto:discover@yumelabs.com" class="hover:text-red-500">
+                            <i class="far fa-envelope"></i> <span class="px-5">contact@welfie.in</span>
+                        </a>
+                        <a target="_blank" href="//api.whatsapp.com/send?phone=918583035111&text=Hi, We are Yumelabs"
+                            title="Contact Us on whatsapp" class="hover:text-red-500">
+                            <i class="fab fa-whatsapp"></i> <span class="px-5">+91-8197661152</span>
+                        </a>
+                        <a target="_blank" href="tel:+918583035111" class="hover:text-red-500">
+                            Welfie Technologies Pvt. Ltd.
+                            65, 1st Floor, 4th Main Road,
+                            Domlur 2nd Stage, Domlur,
+                            Bengaluru, Karnataka, India - 560071</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="flex gap-3 flex-col text-sm">
+                    <li>
+                        <h1 class="font-semibold">FOLLOW US</h1>
+                    </li>
+                    <li class="flex gap-10">
+                        <a target="_blank" href="https://www.facebook.com/welfielabs" class="hover:text-red-500">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a target="_blank" href="https://twitter.com/welfielabs" class="hover:text-red-500">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a target="_blank" href="https://www.linkedin.com/company/welfielabs/"
+                            class="hover:text-red-500">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </div>
-    </section>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/custom.js"></script>
+            <div class="text-center text-xs p-10">
+                <span>All rights reserved 2021 Indic Origins Private Limited</span>
+            </div>
+        </footer>
+    </div>
+    <script type="module" src="./js/main.js"></script>
 </body>
 
 </html>
