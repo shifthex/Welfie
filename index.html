@@ -1,342 +1,420 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Basic Page Needs
-    ================================================== -->
-    <meta charset="utf-8">
-    <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welfie - BP Machine</title>
-     
-    <!-- Favicons
-    ================================================== -->
-<!--     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
- -->
-    <!-- Bootstrap -->
-    <link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+<html lang="en" class="scroll-smooth scroll-pt-16">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welfie — Smartphone Blood Pressure Monitor</title>
+  <meta name="description" content="Welfie is an affordable, smartphone-based blood pressure monitor that makes measuring BP and sharing readings with your doctor effortless.">
+  <meta name="theme-color" content="#f4f4f2">
 
-    <!-- Slider
-    ================================================== -->
-    <link href="css/owl.carousel.css" rel="stylesheet" media="screen">
-    <link href="css/owl.theme.css" rel="stylesheet" media="screen">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..600&display=swap" rel="stylesheet">
 
-    <!-- Stylesheet
-    ================================================== -->
-    <link rel="stylesheet" type="text/css"  href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.11"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+      --font-sans--font-feature-settings: "ss03";
+      --color-canvas: #f4f4f2;
+      --color-panel: #e9e9e5;
+      --color-ink: #0b0b0c;
+      --color-brand-50: #fff4ed;
+      --color-brand-100: #ffe5d3;
+      --color-brand-300: #fdab7a;
+      --color-brand-400: #fb8a4a;
+      --color-brand-500: #f26522;
+      --color-brand-600: #d4531a;
+      --color-brand-700: #ad3f12;
+      --animate-fade-in: fade-in .5s ease both;
+      --animate-ecg: ecg 3.5s linear infinite;
+      @keyframes fade-in { from { opacity: 0; transform: translateY(6px); } }
+      @keyframes ecg { from { stroke-dashoffset: 1000; } to { stroke-dashoffset: 0; } }
+    }
+  </style>
+</head>
+<body class="bg-canvas font-sans text-base leading-7 text-black/55 antialiased selection:bg-brand-100 selection:text-ink">
 
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400' rel='stylesheet' type='text/css'>
+  <!-- Icon sprite -->
+  <svg width="0" height="0" class="absolute" aria-hidden="true">
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></symbol>
+    <symbol id="i-audio" viewBox="0 0 24 24"><path d="M2 10v3M6 6v11M10 3v18M14 8v7M18 5v13M22 10v3"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M12 3l1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2Z"/><path d="M19 3v4M17 5h4"/></symbol>
+    <symbol id="i-clipboard" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4M12 16h4M8 11h.01M8 16h.01"/></symbol>
+    <symbol id="i-steth" viewBox="0 0 24 24"><path d="M11 2v2M5 2v2M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+    <symbol id="i-arrow-ur" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-10 5L2 7"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 9h16M4 15h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  </svg>
 
-    <script type="text/javascript" src="js/modernizr.custom.js"></script>
+  <!-- Navigation -->
+  <header id="nav" class="group fixed inset-x-0 top-0 z-50 border-b border-transparent bg-canvas/0 transition-colors duration-300 data-[scrolled=true]:border-black/[0.06] data-[scrolled=true]:bg-canvas/85 data-[scrolled=true]:backdrop-blur-md data-[open=true]:border-black/[0.06] data-[open=true]:bg-canvas">
+    <div class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-4 sm:px-6">
+      <a href="#home" class="inline-flex items-center gap-2 text-[19px] font-medium tracking-[-0.03em] text-ink" aria-label="Welfie home">
+        <svg class="size-[22px] fill-none stroke-brand-500 stroke-2 [stroke-linecap:round] [stroke-linejoin:round]"><use href="#i-heart"/></svg>
+        Welfie
+      </a>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <!-- Navigation
-    ==========================================-->
-    <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html">WELFIE</a>
-        </div>
+      <nav id="nav-links" aria-label="Primary" class="pointer-events-none fixed inset-x-0 top-16 flex -translate-y-2 flex-col border-b border-black/[0.06] bg-canvas px-4 pb-6 pt-2 opacity-0 transition duration-200 group-data-[open=true]:pointer-events-auto group-data-[open=true]:translate-y-0 group-data-[open=true]:opacity-100 md:pointer-events-auto md:static md:translate-y-0 md:flex-row md:items-center md:gap-8 md:border-0 md:bg-transparent md:p-0 md:opacity-100">
+        <a href="#features" class="py-3 text-[15px] text-black/55 transition hover:text-ink md:py-0">Why Welfie</a>
+        <a href="#how" class="py-3 text-[15px] text-black/55 transition hover:text-ink md:py-0">How it works</a>
+        <a href="#product" class="py-3 text-[15px] text-black/55 transition hover:text-ink md:py-0">Product</a>
+        <a href="#team" class="py-3 text-[15px] text-black/55 transition hover:text-ink md:py-0">Team</a>
+        <a href="#contact" data-cta class="mt-3 inline-flex justify-center rounded-lg bg-ink px-4 py-2.5 text-sm font-medium text-white transition hover:bg-black/80 md:mt-0 md:py-2">Contact us</a>
+      </nav>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#tf-home" class="page-scroll">Home</a></li>
-            <li><a href="#tf-services" class="page-scroll">Idea</a></li>
-            <li><a href="#tf-about" class="page-scroll">Product</a></li>
-            <li><a href="#tf-team" class="page-scroll">Team</a></li>
-          <!--   <li><a href="#tf-works" class="page-scroll">Portfolio</a></li> -->
-         <!--    <li><a href="#tf-testimonials" class="page-scroll">Testimonials</a></li> -->
-            <li><a href="#tf-contact" class="page-scroll">Contact</a></li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-
-    <!-- Home Page
-    ==========================================-->
-    <div id="tf-home" class="text-center">
-        <div class="overlay">
-            <div class="col-md-12">
-                <div class="container">
-                    <div class="content">
-                <h1>Introducing <strong><span class="color">WELFIE</span></strong></h1>
-                <p class="lead"><strong>Welfie </strong>is inexpensive <strong>smartphone</strong> based personal blood pressure measuring device for you and your family. It is designed to solve the  hassle of <strong>taking BP</strong> and <strong>sharing</strong> readings with your doctor.</p>
-                </div>
-                <a href="#tf-about" class="fa fa-angle-down page-scroll"></a>
-            </div>
-            </div>
-        </div>
+      <button id="nav-toggle" class="-mr-2 p-2 text-ink md:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <svg class="size-6 fill-none stroke-current stroke-[1.5] [stroke-linecap:round] group-data-[open=true]:hidden"><use href="#i-menu"/></svg>
+        <svg class="hidden size-6 fill-none stroke-current stroke-[1.5] [stroke-linecap:round] group-data-[open=true]:block"><use href="#i-close"/></svg>
+      </button>
     </div>
+  </header>
 
-        <!-- Services Section
-    ==========================================-->
-    <div id="tf-services" class="text-center">
-        <div class="container">
-            <div class="section-title center">
-                <h2><strong>What we are trying to solve</strong></h2>
-                <div class="line">
-                    <hr>
-                </div>
-                <div class="clearfix"></div>
-                <small><em>These are the problems that we have been trying to solve. Please let us know if you can connect these problems</em></small>
-            </div>
-            <div class="space"></div>
-            <div class="row">
-                <div class="col-md-3 col-sm-6 service">
-                    <img id="meter-icon" src="img/readings.png" alt="">
-                    <h4><strong>Measurement Accuracy</strong></h4>
-                    <p>Available <b>consumer</b> BP machines are not that accurate, hence doctors don't rely on the reading when shared</p>
-                </div>
-
-                <div class="col-md-3 col-sm-6 service">
-                    <i class="fa fa-mobile"></i>
-                    <h4><strong>Keeping History</strong></h4>
-                    <p>BP histroy can reveal important health issues but most people maintain history in some log book which is not useful.</p>
-                </div>
-
-                <div class="col-md-3 col-sm-6 service">
-                    <i class="fa fa-camera"></i>
-                    <h4><strong>Sharing Records</strong></h4>
-                    <p>Sharing log books with doctors is not a efficient way of sharing data for analysis</p>
-                </div>
-
-                <div class="col-md-3 col-sm-6 service">
-                    <i class="fa fa-bullhorn"></i>
-                    <h4><strong>REMINDERS</strong></h4>
-                    <p>Some patients forget to take their daily BP measurement and make record of it.</p>
-                </div>
-            </div>
+  <main>
+    <!-- Hero -->
+    <section id="home" class="px-4 pb-16 pt-32 sm:px-6 lg:pb-24 lg:pt-44">
+      <div data-reveal class="mx-auto max-w-3xl text-center">
+        <p class="inline-flex items-center gap-2 text-sm text-black/55">
+          <span class="relative flex size-1.5"><span class="absolute inline-flex size-full animate-ping rounded-full bg-brand-500 opacity-60"></span><span class="relative size-1.5 rounded-full bg-brand-500"></span></span>
+          Home blood pressure monitoring
+        </p>
+        <h1 class="mt-5 text-[clamp(2.6rem,6.4vw,4.75rem)] font-normal leading-[1.02] tracking-[-0.045em] text-ink">Blood pressure checks, made effortless</h1>
+        <p class="mx-auto mt-6 max-w-xl text-lg leading-8">Welfie is an inexpensive, smartphone-based blood pressure monitor for you and your family — built to remove the hassle of taking BP and sharing readings with your doctor.</p>
+        <div class="mt-9 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+          <a href="#contact" class="rounded-lg bg-ink px-5 py-3 text-[15px] font-medium text-white transition hover:bg-black/80">Get in touch</a>
+          <a href="#how" class="group/l inline-flex items-center gap-1.5 text-[15px] font-medium text-ink">See how it works <svg class="size-4 fill-none stroke-current stroke-2 [stroke-linecap:round] [stroke-linejoin:round] transition group-hover/l:translate-x-0.5"><use href="#i-arrow"/></svg></a>
         </div>
+      </div>
+
+      <div data-reveal class="relative mx-auto mt-16 max-w-6xl rounded-[28px] bg-panel p-2 sm:p-3 lg:mt-20">
+        <div class="aspect-[4/3] overflow-hidden rounded-[22px] sm:aspect-[16/8]">
+          <img src="img/01.jpg" alt="A person measuring blood pressure with the Welfie cuff connected to a smartphone" width="1200" height="658" class="size-full object-cover object-[65%_center]">
+        </div>
+        <div class="absolute bottom-6 left-6 hidden rounded-2xl bg-white/90 px-5 py-4 backdrop-blur sm:block lg:bottom-10 lg:left-10">
+          <p class="text-xs text-black/50">Latest reading</p>
+          <p class="mt-0.5 text-3xl tabular-nums tracking-[-0.04em] text-ink">118<span class="text-black/30">/</span>76 <span class="text-sm tracking-normal text-black/45">mmHg</span></p>
+          <p class="mt-1.5 inline-flex items-center gap-1.5 text-xs text-brand-700"><span class="size-1.5 rounded-full bg-brand-500"></span>Normal · shared with your doctor</p>
+        </div>
+      </div>
+
+      <ul data-reveal class="mx-auto mt-10 grid max-w-6xl gap-x-10 gap-y-6 text-[15px] sm:grid-cols-3 lg:mt-14">
+        <li class="flex gap-3"><svg class="mt-1 size-5 shrink-0 fill-none stroke-ink stroke-[1.5] [stroke-linecap:round] [stroke-linejoin:round]"><use href="#i-audio"/></svg><span><span class="text-ink">No Bluetooth pairing.</span> Readings travel to your phone over audio.</span></li>
+        <li class="flex gap-3"><svg class="mt-1 size-5 shrink-0 fill-none stroke-ink stroke-[1.5] [stroke-linecap:round] [stroke-linejoin:round]"><use href="#i-sparkles"/></svg><span><span class="text-ink">AI anomaly detection.</span> Unusual readings are flagged early.</span></li>
+        <li class="flex gap-3"><svg class="mt-1 size-5 shrink-0 fill-none stroke-ink stroke-[1.5] [stroke-linecap:round] [stroke-linejoin:round]"><use href="#i-steth"/></svg><span><span class="text-ink">Co-founded by a doctor.</span> History built for patient and physician.</span></li>
+      </ul>
+    </section>
+
+    <!-- Why Welfie: problem → solution -->
+    <section id="features" class="px-4 py-20 sm:px-6 lg:py-32">
+      <div class="mx-auto max-w-6xl">
+        <header data-reveal class="max-w-2xl">
+          <h2 class="text-[clamp(2rem,4vw,3rem)] font-normal leading-[1.08] tracking-[-0.04em] text-ink">Home BP monitoring is broken. Here's how we fix it.</h2>
+        </header>
+
+        <div data-reveal data-tabs class="mt-12 lg:mt-16">
+          <div role="tablist" aria-label="Problems Welfie solves" class="-mx-4 flex gap-8 overflow-x-auto border-b border-black/10 px-4 [scrollbar-width:none] sm:mx-0 sm:px-0">
+            <button role="tab" id="tab-ease" aria-controls="panel-ease" aria-selected="true" data-active="true" class="relative shrink-0 whitespace-nowrap pb-4 text-[15px] text-black/45 transition after:absolute after:inset-x-0 after:-bottom-px after:h-px after:origin-left after:scale-x-0 after:bg-ink after:transition after:duration-300 hover:text-ink data-[active=true]:text-ink data-[active=true]:after:scale-x-100">Ease of use<span data-progress aria-hidden="true" class="pointer-events-none absolute inset-x-0 -bottom-px z-10 h-0.5 origin-left scale-x-0 bg-brand-500"></span></button>
+            <button role="tab" id="tab-remind" aria-controls="panel-remind" aria-selected="false" tabindex="-1" class="relative shrink-0 whitespace-nowrap pb-4 text-[15px] text-black/45 transition after:absolute after:inset-x-0 after:-bottom-px after:h-px after:origin-left after:scale-x-0 after:bg-ink after:transition after:duration-300 hover:text-ink data-[active=true]:text-ink data-[active=true]:after:scale-x-100">Reminders<span data-progress aria-hidden="true" class="pointer-events-none absolute inset-x-0 -bottom-px z-10 h-0.5 origin-left scale-x-0 bg-brand-500"></span></button>
+            <button role="tab" id="tab-ai" aria-controls="panel-ai" aria-selected="false" tabindex="-1" class="relative shrink-0 whitespace-nowrap pb-4 text-[15px] text-black/45 transition after:absolute after:inset-x-0 after:-bottom-px after:h-px after:origin-left after:scale-x-0 after:bg-ink after:transition after:duration-300 hover:text-ink data-[active=true]:text-ink data-[active=true]:after:scale-x-100">Predicting anomalies<span data-progress aria-hidden="true" class="pointer-events-none absolute inset-x-0 -bottom-px z-10 h-0.5 origin-left scale-x-0 bg-brand-500"></span></button>
+            <button role="tab" id="tab-history" aria-controls="panel-history" aria-selected="false" tabindex="-1" class="relative shrink-0 whitespace-nowrap pb-4 text-[15px] text-black/45 transition after:absolute after:inset-x-0 after:-bottom-px after:h-px after:origin-left after:scale-x-0 after:bg-ink after:transition after:duration-300 hover:text-ink data-[active=true]:text-ink data-[active=true]:after:scale-x-100">Shared history<span data-progress aria-hidden="true" class="pointer-events-none absolute inset-x-0 -bottom-px z-10 h-0.5 origin-left scale-x-0 bg-brand-500"></span></button>
+          </div>
+
+          <!-- Panel: Ease of use -->
+          <div role="tabpanel" id="panel-ease" aria-labelledby="tab-ease" class="mt-10 grid animate-fade-in items-center gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-16">
+            <div class="flex aspect-[4/3] items-center justify-center gap-5 rounded-[28px] bg-panel px-6 sm:gap-8" aria-hidden="true">
+              <div class="grid size-20 place-items-center rounded-3xl bg-ink text-white sm:size-24">
+                <svg class="size-9 fill-none stroke-current stroke-[1.5] [stroke-linecap:round] [stroke-linejoin:round]"><use href="#i-heart"/></svg>
+              </div>
+              <div class="flex items-center gap-1.5 text-brand-500">
+                <span class="h-3 w-1 animate-pulse rounded-full bg-current"></span>
+                <span class="h-7 w-1 animate-pulse rounded-full bg-current [animation-delay:.15s]"></span>
+                <span class="h-12 w-1 animate-pulse rounded-full bg-current [animation-delay:.3s]"></span>
+                <span class="h-6 w-1 animate-pulse rounded-full bg-current [animation-delay:.45s]"></span>
+                <span class="h-10 w-1 animate-pulse rounded-full bg-current [animation-delay:.6s]"></span>
+                <span class="h-4 w-1 animate-pulse rounded-full bg-current [animation-delay:.75s]"></span>
+              </div>
+              <div class="flex h-36 w-20 flex-col items-center justify-center gap-1.5 rounded-[20px] border-[5px] border-ink bg-white sm:h-44 sm:w-24">
+                <span class="text-sm tabular-nums tracking-tight text-ink">118/76</span>
+                <span class="text-[9px] text-black/40">via audio</span>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-[28px] font-normal leading-tight tracking-[-0.035em] text-ink">Effortless, even for first-timers</h3>
+              <p class="mt-6 text-sm text-black/40">The problem</p>
+              <p class="mt-1">Home BP monitors are fiddly — Bluetooth pairing, apps to open, settings to configure. Many patients, especially older ones, simply give up.</p>
+              <p class="mt-6 text-sm text-brand-700">With Welfie</p>
+              <ul class="mt-2 divide-y divide-black/[0.07] border-y border-black/[0.07] text-[15px]">
+                <li class="flex gap-3 py-3"><svg class="mt-1 size-4 shrink-0 fill-none stroke-brand-500 stroke-2 [stroke-linecap:round] [stroke-linejoin:round]"><use href="#i-check"/></svg><span><span class="text-ink">No Bluetooth pairing</span> — nothing to connect or configure.</span></li>
+                <li class="flex gap-3 py-3"><svg class="mt-1 size-4 shrink-0 fill-none stroke-brand-500 stroke-2 [stroke-linecap:round] [stroke-linejoin:round]"><use href="#i-check"/></svg><span><span class="text-ink">Data travels over audio</span> — readings reach the phone through sound.</span></li>
+                <li class="flex gap-3 py-3"><svg class="mt-1 size-4 shrink-0 fill-none stroke-brand-500 stroke-2 [stroke-linecap:round] [stroke-linejoin:round]"><use href="#i-check"/></svg><span><span class="text-ink">Launches automatically</span> — the app opens when you switch the machine on.</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Panel: Reminders -->
+          <div role="tabpanel" id="panel-remind" aria-labelledby="tab-remind" class="mt-10 grid animate-fade-in items-center gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-16" hidden>
+            <div class="flex aspect-[4/3] items-center justify-center rounded-[28px] bg-panel px-6" aria-hidden="true">
+              <div class="grid w-full max-w-xs gap-3">
+                <div class="flex items-start gap-3 rounded-2xl bg-white p-4">
+                  <span class="grid size-9 shrink-0 place-items-center rounded-xl bg-ink text-white"><svg class="size-5 fill-none stroke-current stroke-[1.5] [stroke-linecap:round] [stroke-linejoin:round]"><use href="#i-heart"/></svg></span>
+                  <div class="min-w-0 text-[13px] leading-5">
+                    <div class="flex justify-between gap-2"><span class="text-ink">Welfie</span><span class="text-black/35">now</span></div>
+                    <p>Time for your morning BP reading.</p>
+                  </div>
+                </div>
+                <div class="mx-4 flex items-center justify-between rounded-2xl bg-white/60 px-4 py-3 text-[13px]">
+                  <span>This week</span>
+                  <span class="flex gap-1.5">
+                    <span class="size-2.5 rounded-full bg-brand-500"></span><span class="size-2.5 rounded-full bg-brand-500"></span><span class="size-2.5 rounded-full bg-brand-500"></span><span class="size-2.5 rounded-full bg-brand-500"></span><span class="size-2.5 rounded-full bg-brand-500"></span><span class="size-2.5 rounded-full ring-1 ring-inset ring-brand-500"></span><span class="size-2.5 rounded-full ring-1 ring-inset ring-black/15"></span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-[28px] font-normal leading-tight tracking-[-0.035em] text-ink">Never miss a reading</h3>
+              <p class="mt-6 text-sm text-black/40">The problem</p>
+              <p class="mt-1">Patients forget to take their daily BP measurement and record it, leaving gaps in the data their doctor relies on.</p>
+              <p class="mt-6 text-sm text-brand-700">With Welfie</p>
+              <ul class="mt-2 divide-y divide-black/[0.07] border-y border-black/[0.07] text-[15px]">
+                <li class="flex gap-3 py-3"><svg class="mt-1 size-4 shrink-0 fill-none stroke-brand-500 stroke-2 [stroke-linecap:round] [stroke-linejoin:round]"><use href="#i-check"/></svg><span><span class="text-ink">Daily reminders</span> so no reading is missed.</span></li>
+                <li class="flex gap-3 py-3"><svg class="mt-1 size-4 shrink-0 fill-none stroke-brand-500 stroke-2 [stroke-linecap:round] [stroke-linejoin:round]"><use href="#i-check"/></svg><span><span class="text-ink">Saved automatically</span> — nothing to write down.</span></li>
+                <li class="flex gap-3 py-3"><svg class="mt-1 size-4 shrink-0 fill-none stroke-brand-500 stroke-2 [stroke-linecap:round] [stroke-linejoin:round]"><use href="#i-check"/></svg><span><span class="text-ink">Complete data</span> gives your doctor the full picture.</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Panel: Anomalies -->
+          <div role="tabpanel" id="panel-ai" aria-labelledby="tab-ai" class="mt-10 grid animate-fade-in items-center gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-16" hidden>
+            <div class="flex aspect-[4/3] items-center justify-center rounded-[28px] bg-panel px-6" aria-hidden="true">
+              <div class="w-full max-w-sm rounded-2xl bg-white p-5">
+                <div class="mb-4 flex items-center justify-between text-xs">
+                  <span>Systolic · last 14 days</span>
+                  <span class="inline-flex items-center gap-1.5 text-rose-600"><span class="size-1.5 rounded-full bg-rose-500"></span>Anomaly flagged</span>
+                </div>
+                <svg viewBox="0 0 280 90" class="w-full">
+                  <line x1="0" y1="28" x2="280" y2="28" class="stroke-black/10" stroke-dasharray="3 4"/>
+                  <polyline points="0,62 25,57 50,64 75,59 100,54 125,61 150,57 175,58 200,16 225,58 250,53 280,57" class="fill-none stroke-ink" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+                  <circle cx="200" cy="16" r="10" class="fill-rose-500/15"/>
+                  <circle cx="200" cy="16" r="4" class="fill-rose-500"/>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-[28px] font-normal leading-tight tracking-[-0.035em] text-ink">AI that spots what you'd miss</h3>
+              <p class="mt-6 text-sm text-black/40">The problem</p>
+              <p class="mt-1">A worrying reading is easy to miss. Without anyone watching the trend, warning signs go unnoticed until the next doctor visit.</p>
+              <p class="mt-6 text-sm text-brand-700">With Welfie</p>
+              <ul class="mt-2 divide-y divide-black/[0.07] border-y border-black/[0.07] text-[15px]">
+                <li class="flex gap-3 py-3"><svg class="mt-1 size-4 shrink-0 fill-none stroke-brand-500 stroke-2 [stroke-linecap:round] [stroke-linejoin:round]"><use href="#i-check"/></svg><span><span class="text-ink">Flags unusual readings</span> that break from your normal pattern.</span></li>
+                <li class="flex gap-3 py-3"><svg class="mt-1 size-4 shrink-0 fill-none stroke-brand-500 stroke-2 [stroke-linecap:round] [stroke-linejoin:round]"><use href="#i-check"/></svg><span><span class="text-ink">More accurate readings</span> using machine learning.</span></li>
+                <li class="flex gap-3 py-3"><svg class="mt-1 size-4 shrink-0 fill-none stroke-brand-500 stroke-2 [stroke-linecap:round] [stroke-linejoin:round]"><use href="#i-check"/></svg><span><span class="text-ink">Early warning</span> so issues reach your doctor sooner.</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Panel: History -->
+          <div role="tabpanel" id="panel-history" aria-labelledby="tab-history" class="mt-10 grid animate-fade-in items-center gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-16" hidden>
+            <div class="flex aspect-[4/3] items-center justify-center rounded-[28px] bg-panel px-6" aria-hidden="true">
+              <div class="w-full max-w-[280px] divide-y divide-black/[0.06] rounded-2xl bg-white text-xs">
+                <div class="flex items-center justify-between px-4 py-3"><span>Today, 8:02</span><span class="tabular-nums text-ink">118/76</span><span class="size-1.5 rounded-full bg-brand-500"></span></div>
+                <div class="flex items-center justify-between px-4 py-3"><span>Yesterday</span><span class="tabular-nums text-ink">122/79</span><span class="size-1.5 rounded-full bg-brand-500"></span></div>
+                <div class="flex items-center justify-between px-4 py-3"><span>Mon, 7:55</span><span class="tabular-nums text-ink">141/92</span><span class="size-1.5 rounded-full bg-amber-500"></span></div>
+                <div class="flex items-center justify-between px-4 py-3 text-brand-700"><span class="inline-flex items-center gap-2"><svg class="size-4 fill-none stroke-current stroke-[1.5] [stroke-linecap:round] [stroke-linejoin:round]"><use href="#i-steth"/></svg>Shared with your doctor</span><svg class="size-3.5 fill-none stroke-current stroke-2 [stroke-linecap:round] [stroke-linejoin:round]"><use href="#i-check"/></svg></div>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-[28px] font-normal leading-tight tracking-[-0.035em] text-ink">One history for doctor and patient</h3>
+              <p class="mt-6 text-sm text-black/40">The problem</p>
+              <p class="mt-1">BP history reveals important health issues, but most people keep it in a paper log book that's hard to read and hard to share.</p>
+              <p class="mt-6 text-sm text-brand-700">With Welfie</p>
+              <ul class="mt-2 divide-y divide-black/[0.07] border-y border-black/[0.07] text-[15px]">
+                <li class="flex gap-3 py-3"><svg class="mt-1 size-4 shrink-0 fill-none stroke-brand-500 stroke-2 [stroke-linecap:round] [stroke-linejoin:round]"><use href="#i-check"/></svg><span><span class="text-ink">For patients</span> — every reading saved, for each family member.</span></li>
+                <li class="flex gap-3 py-3"><svg class="mt-1 size-4 shrink-0 fill-none stroke-brand-500 stroke-2 [stroke-linecap:round] [stroke-linejoin:round]"><use href="#i-check"/></svg><span><span class="text-ink">For doctors</span> — a clear trend view to review before or during a visit.</span></li>
+                <li class="flex gap-3 py-3"><svg class="mt-1 size-4 shrink-0 fill-none stroke-brand-500 stroke-2 [stroke-linecap:round] [stroke-linejoin:round]"><use href="#i-check"/></svg><span><span class="text-ink">One-tap sharing</span> keeps both sides on the same page.</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="how" class="px-4 py-20 sm:px-6 lg:py-32">
+      <div class="mx-auto max-w-6xl">
+        <h2 data-reveal class="max-w-2xl text-[clamp(2rem,4vw,3rem)] font-normal leading-[1.08] tracking-[-0.04em] text-ink">From cuff to doctor, without the hassle.</h2>
+        <ol class="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4">
+          <li data-reveal class="border-t border-black/10 pt-6">
+            <span class="text-sm tabular-nums text-black/35">01</span>
+            <h3 class="mt-8 text-lg font-normal tracking-[-0.02em] text-ink">Wrap and plug in</h3>
+            <p class="mt-1.5 text-[15px] leading-6">Put on the cuff and plug Welfie into your phone.</p>
+          </li>
+          <li data-reveal class="border-t border-black/10 pt-6">
+            <span class="text-sm tabular-nums text-black/35">02</span>
+            <h3 class="mt-8 text-lg font-normal tracking-[-0.02em] text-ink">Switch it on</h3>
+            <p class="mt-1.5 text-[15px] leading-6">The app opens by itself. No pairing, no setup.</p>
+          </li>
+          <li data-reveal class="border-t border-black/10 pt-6">
+            <span class="text-sm tabular-nums text-black/35">03</span>
+            <h3 class="mt-8 text-lg font-normal tracking-[-0.02em] text-ink">Take a reading</h3>
+            <p class="mt-1.5 text-[15px] leading-6">Data travels over audio and AI checks it for anomalies.</p>
+          </li>
+          <li data-reveal class="border-t border-brand-500 pt-6">
+            <span class="text-sm tabular-nums text-brand-700">04</span>
+            <h3 class="mt-8 text-lg font-normal tracking-[-0.02em] text-ink">Share with your doctor</h3>
+            <p class="mt-1.5 text-[15px] leading-6">Your history is saved and shared in one tap.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Product -->
+    <section id="product" class="px-4 py-20 sm:px-6 lg:py-32">
+      <div class="mx-auto max-w-6xl">
+        <div data-reveal class="grid gap-6 lg:grid-cols-2 lg:items-end">
+          <h2 class="max-w-xl text-[clamp(2rem,4vw,3rem)] font-normal leading-[1.08] tracking-[-0.04em] text-ink">Software and hardware, designed together.</h2>
+          <p class="max-w-md lg:justify-self-end">A small, affordable device and an Android app that does the heavy lifting — built to work as one.</p>
+        </div>
+
+        <div class="mt-12 grid gap-4 lg:mt-16 lg:grid-cols-2">
+          <article data-reveal>
+            <div class="flex aspect-[5/4] items-center justify-center overflow-hidden rounded-[28px] bg-[#f1e4da]">
+              <div class="h-[86%] rounded-[30px] bg-ink p-2 transition duration-700 hover:-translate-y-1">
+                <img src="img/02.gif" alt="Welfie Android app recording a blood pressure reading" width="240" height="427" loading="lazy" class="h-full w-auto rounded-[23px]">
+              </div>
+            </div>
+            <div class="mt-5 grid gap-1 sm:grid-cols-[auto_1fr] sm:gap-6">
+              <h3 class="font-normal tracking-[-0.02em] text-ink">Welfie app</h3>
+              <p class="text-[15px] leading-6">ML-assisted readings, anomaly detection, family history, one-tap sharing and daily reminders.</p>
+            </div>
+          </article>
+          <article data-reveal>
+            <div class="group aspect-[5/4] overflow-hidden rounded-[28px] bg-panel">
+              <img src="img/02.jpg" alt="Welfie hardware module with cuff, connected to a smartphone" width="708" height="413" loading="lazy" class="size-full object-cover transition duration-700 group-hover:scale-[1.03]">
+            </div>
+            <div class="mt-5 grid gap-1 sm:grid-cols-[auto_1fr] sm:gap-6">
+              <h3 class="font-normal tracking-[-0.02em] text-ink">Welfie hardware</h3>
+              <p class="text-[15px] leading-6">Minimal electronics keep it small and affordable. Plug it in and the app launches on its own.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section id="team" class="px-4 py-20 sm:px-6 lg:py-32">
+      <div class="mx-auto max-w-6xl">
+        <div data-reveal class="grid gap-6 lg:grid-cols-2 lg:items-end">
+          <h2 class="max-w-xl text-[clamp(2rem,4vw,3rem)] font-normal leading-[1.08] tracking-[-0.04em] text-ink">Engineers, designers and a doctor.</h2>
+          <p class="max-w-md lg:justify-self-end">Building the blood pressure monitor we'd want for our own families.</p>
+        </div>
+
+        <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4">
+          <article data-reveal class="group rounded-[24px] bg-panel p-3">
+            <div class="mx-auto aspect-square w-4/5 overflow-hidden rounded-full sm:w-full">
+              <img src="img/team/01.jpg" alt="Samya Bagchi" width="300" height="300" loading="lazy" class="size-full scale-[1.04] rounded-full object-cover grayscale transition duration-500 group-hover:grayscale-0">
+            </div>
+            <div class="px-2 pb-2 pt-5">
+              <h3 class="font-normal tracking-[-0.02em] text-ink">Samya Bagchi</h3>
+              <p class="text-sm">CEO / Founder</p>
+              <p class="mt-4 text-xs text-black/40">IIIT Bangalore · Machine Learning</p>
+            </div>
+          </article>
+          <article data-reveal class="group rounded-[24px] bg-panel p-3">
+            <div class="mx-auto aspect-square w-4/5 overflow-hidden rounded-full sm:w-full">
+              <img src="img/team/02.jpg" alt="Ritwik G" width="300" height="300" loading="lazy" class="size-full scale-[1.04] rounded-full object-cover grayscale transition duration-500 group-hover:grayscale-0">
+            </div>
+            <div class="px-2 pb-2 pt-5">
+              <h3 class="font-normal tracking-[-0.02em] text-ink">Ritwik G</h3>
+              <p class="text-sm">CTO / Founder</p>
+              <p class="mt-4 text-xs text-black/40">Hardware Engineer</p>
+            </div>
+          </article>
+          <article data-reveal class="group rounded-[24px] bg-panel p-3">
+            <div class="relative mx-auto aspect-square w-4/5 sm:w-full">
+              <img src="img/team/03.jpg" alt="Dr. Abdul Salaam" width="300" height="300" loading="lazy" class="size-full scale-[1.04] rounded-full object-cover grayscale transition duration-500 group-hover:grayscale-0">
+              <span class="absolute bottom-1 left-1/2 inline-flex -translate-x-1/2 items-center gap-1.5 whitespace-nowrap rounded-full bg-white px-2.5 py-1 text-xs text-brand-700 backdrop-blur"><svg class="size-3.5 fill-none stroke-current stroke-[1.5] [stroke-linecap:round] [stroke-linejoin:round]"><use href="#i-steth"/></svg>Medical doctor</span>
+            </div>
+            <div class="px-2 pb-2 pt-5">
+              <h3 class="font-normal tracking-[-0.02em] text-ink">Dr. Abdul Salaam</h3>
+              <p class="text-sm">CFO / Founder</p>
+              <p class="mt-4 text-xs text-black/40">M.B.B.S., M.D. · Medical Researcher</p>
+            </div>
+          </article>
+          <article data-reveal class="group rounded-[24px] bg-panel p-3">
+            <div class="mx-auto aspect-square w-4/5 overflow-hidden rounded-full sm:w-full">
+              <img src="img/team/04.jpg" alt="Abhinav Kr" width="300" height="300" loading="lazy" class="size-full scale-[1.04] rounded-full object-cover grayscale transition duration-500 group-hover:grayscale-0">
+            </div>
+            <div class="px-2 pb-2 pt-5">
+              <h3 class="font-normal tracking-[-0.02em] text-ink">Abhinav Kr</h3>
+              <p class="text-sm">Founder / Head of Design</p>
+              <p class="mt-4 text-xs text-black/40">IIT Bombay · M.Des Interaction Design</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="relative overflow-hidden px-4 pb-20 pt-36 sm:px-6 lg:pb-28 lg:pt-48">
+      <svg aria-hidden="true" viewBox="0 0 1200 200" preserveAspectRatio="none" class="pointer-events-none absolute inset-x-0 top-6 h-24 w-full lg:top-8 lg:h-32">
+        <path d="M0 110 H430 l16 -10 l12 10 h22 l12 -70 l18 126 l14 -76 h20 l14 -12 l14 12 H1200" fill="none" class="stroke-black/[0.07]" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M0 110 H430 l16 -10 l12 10 h22 l12 -70 l18 126 l14 -76 h20 l14 -12 l14 12 H1200" fill="none" class="animate-ecg stroke-brand-500 motion-reduce:hidden" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" pathLength="1000" stroke-dasharray="90 910"/>
+      </svg>
+
+      <div class="relative mx-auto max-w-6xl">
+        <div data-reveal class="mx-auto max-w-2xl text-center">
+          <h2 class="text-[clamp(2.2rem,5vw,3.75rem)] font-normal leading-[1.04] tracking-[-0.045em] text-ink">Let's make blood pressure care easier.</h2>
+          <p class="mx-auto mt-5 max-w-md text-lg">Doctors, clinics, partners or patients — we'd love to hear from you.</p>
+          <a href="mailto:samya@welfie.in" class="mt-8 inline-flex items-center gap-2 rounded-lg bg-ink px-5 py-3 text-[15px] font-medium text-white transition hover:bg-black/80">
+            <svg class="size-4 fill-none stroke-current stroke-[1.5] [stroke-linecap:round] [stroke-linejoin:round]"><use href="#i-mail"/></svg>
+            Email the team
+          </a>
+        </div>
+
+        <div data-reveal class="mt-16 grid gap-4 sm:grid-cols-2 lg:mt-20 lg:grid-cols-4">
+          <a href="mailto:samya@welfie.in" class="group flex flex-col justify-between gap-10 rounded-[24px] bg-panel p-6 transition hover:bg-[#e1e1dc]">
+            <div class="flex items-center gap-3">
+              <img src="img/team/01.jpg" alt="" width="300" height="300" loading="lazy" class="size-10 rounded-full object-cover">
+              <div class="leading-5"><p class="text-[15px] text-ink">Samya Bagchi</p><p class="text-sm">Partnerships</p></div>
+            </div>
+            <span class="flex items-center justify-between text-[15px] text-ink">samya@welfie.in <svg class="size-4 fill-none stroke-current stroke-[1.5] transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 [stroke-linecap:round] [stroke-linejoin:round]"><use href="#i-arrow-ur"/></svg></span>
+          </a>
+          <a href="mailto:ritwik@welfie.in" class="group flex flex-col justify-between gap-10 rounded-[24px] bg-panel p-6 transition hover:bg-[#e1e1dc]">
+            <div class="flex items-center gap-3">
+              <img src="img/team/02.jpg" alt="" width="300" height="300" loading="lazy" class="size-10 rounded-full object-cover">
+              <div class="leading-5"><p class="text-[15px] text-ink">Ritwik G</p><p class="text-sm">Hardware &amp; tech</p></div>
+            </div>
+            <span class="flex items-center justify-between text-[15px] text-ink">ritwik@welfie.in <svg class="size-4 fill-none stroke-current stroke-[1.5] transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 [stroke-linecap:round] [stroke-linejoin:round]"><use href="#i-arrow-ur"/></svg></span>
+          </a>
+          <a href="mailto:abhinav@welfie.in" class="group flex flex-col justify-between gap-10 rounded-[24px] bg-panel p-6 transition hover:bg-[#e1e1dc]">
+            <div class="flex items-center gap-3">
+              <img src="img/team/04.jpg" alt="" width="300" height="300" loading="lazy" class="size-10 rounded-full object-cover">
+              <div class="leading-5"><p class="text-[15px] text-ink">Abhinav Kr</p><p class="text-sm">Design</p></div>
+            </div>
+            <span class="flex items-center justify-between text-[15px] text-ink">abhinav@welfie.in <svg class="size-4 fill-none stroke-current stroke-[1.5] transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 [stroke-linecap:round] [stroke-linejoin:round]"><use href="#i-arrow-ur"/></svg></span>
+          </a>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Edifice%2C%2080%20Feet%20Road%2C%20Indiranagar%2C%20Bangalore%20560038" target="_blank" rel="noopener" class="group flex flex-col justify-between gap-10 rounded-[24px] bg-ink p-6 text-white/60 transition hover:bg-black/85">
+            <p class="text-[15px] leading-6"><span class="text-white">Visit us</span><br>Edifice, 80 Feet Road, Indiranagar, Bangalore 560038</p>
+            <span class="flex items-center justify-between text-[15px] text-white">Open in Maps <svg class="size-4 fill-none stroke-current stroke-[1.5] transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 [stroke-linecap:round] [stroke-linejoin:round]"><use href="#i-arrow-ur"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-black/[0.06] px-4 py-10 sm:px-6">
+    <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 text-sm">
+      <a href="#home" class="inline-flex items-center gap-2 text-base font-medium tracking-[-0.03em] text-ink">
+        <svg class="size-[18px] fill-none stroke-brand-500 stroke-2 [stroke-linecap:round] [stroke-linejoin:round]"><use href="#i-heart"/></svg>
+        Welfie
+      </a>
+      <p>&copy; <span id="year">2026</span> Welfie. Made in Bangalore.</p>
     </div>
+  </footer>
 
-
-    <!-- About Us Page
-    ==========================================-->
-    <div id="tf-about">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="img/02.gif" class="img-responsive">
-                </div>
-                <div class="col-md-6">
-                    <div class="about-text">
-                        <div class="section-title">
-                            <h4>Welfie Software</h4>
-                            <h2>Features of <strong>Application</strong></h2>
-                            <hr>
-                            <div class="clearfix"></div>
-                        </div>
-                        <p class="intro">Our android app uses machine learning and good design to improve the overall experience</p>
-                        <ul class="about-list">
-                            <li>
-                                <span class="fa fa-dot-circle-o"></span>
-                                <strong>Accurate BP</strong> - <em>Using ML for accurate readings</em>
-                            </li>
-                            <li>
-                                <span class="fa fa-dot-circle-o"></span>
-                                <strong>Health Prediction</strong> - <em>Using ML for predicting any health issue</em>
-                            </li>
-                            <li>
-                                <span class="fa fa-dot-circle-o"></span>
-                                <strong>History</strong> - <em>Record history for multiple users</em>
-                            </li>
-                            <li>
-                                <span class="fa fa-dot-circle-o"></span>
-                                <strong>Share</strong> - <em>Share history with just one click</em>
-                            </li>
-                            <li>
-                                <span class="fa fa-dot-circle-o"></span>
-                                <strong>Reminders</strong> - <em>Get daily reminders for taking BP readings</em>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-         <div class="container" style="margin:4em auto;">
-                    <div class="row">
-
-                    <div class="col-md-6">
-                        <img src="img/02.jpg" class="img-responsive">
-                    </div>
-                        <div class="col-md-6">
-                            <div class="about-text">
-                                <div class="section-title">
-                                    <h4>Welfie Hardware</h4>
-                                    <h2>Features of <strong>hardware</strong></h2>
-                                    <hr>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <p class="intro">Our hardware uses minimal electronics to keep the price and size small</p>
-                                <ul class="about-list">
-                                    <li>
-                                        <span class="fa fa-dot-circle-o"></span>
-                                        <strong>Affordable price</strong>  
-                                    </li>
-                                    <li>
-                                        <span class="fa fa-dot-circle-o"></span>
-                                        <strong>Easy setup</strong> - <em>Plug it in your smart phone & launch app</em>
-                                    </li> 
-                                </ul>
-                            </div>
-                        </div>
-                    </div> 
-                </div>
-
-    </div>
-
-    <!-- Team Page
-    ==========================================-->
-    <div id="tf-team" class="text-center">
-        <div class="overlay">
-            <div class="container">
-                <div class="section-title center">
-                    <h2>Meet <strong>our team</strong></h2>
-                    <div class="line">
-                        <hr>
-                    </div>
-                </div>
-
-                <div id="team" class="owl-carousel owl-theme row">
-                    <div class="item">
-                        <div class="thumbnail">
-                            <img src="img/team/01.jpg" alt="..." class="img-circle team-img">
-                            <div class="caption">
-                                <h3>Samya Bagchi</h3>
-                                <p>CEO / Founder</p>
-                                <p>IIIT Bangalore, Machine Learning</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="thumbnail">
-                            <img src="img/team/02.jpg" alt="..." class="img-circle team-img">
-                            <div class="caption">
-                                <h3>Ritwik G</h3>
-                                <p>CTO / Founder</p>
-                                <p>College Dropout, Hardware Engineer</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="thumbnail">
-                            <img src="img/team/03.jpg" alt="..." class="img-circle team-img">
-                            <div class="caption">
-                                <h3>Dr. Abdul Salaam</h3>
-                                <p>CFO / Founder</p>
-                                <p>M.B.B.S., M.D., Medical Researcher</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="thumbnail">
-                            <img src="img/team/04.jpg" alt="..." class="img-circle team-img">
-                            <div class="caption">
-                                <h3>Abhinav Kr</h3>
-                                <p>Founder / Head of Design</p>
-                                <p>IIT Bombay, M.Des Interaction Design</p>
-                            </div>
-                        </div>
-                    </div>
- 
-                </div>
-                
-            </div>
-        </div>
-    </div>
-
- 
-    <!-- Contact Section
-    ==========================================-->
-    <div id="tf-contact" class="text-center">
-        <div class="container">
-
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-
-                    <div class="section-title center">
-                        <h2>Feel free to <strong>contact us</strong></h2>
-                        <div class="line">
-                            <hr>
-                        </div>
-                        <div class="clearfix"></div>        
-                    </div>
-
-                     <div class="col-md-6">
-                         <h3>ADDRESS</h3><br>
-                         Edifice, 80 feet Road, Indiranagar,Bangalaore
-                         <br>
-                         India, 560038
-                     </div>
-                     <div class="col-md-6 align-left">
-                         <h3>EMAIL ADDRESS</h3>
-                         <ul style="list-style:none">
-                             <li>samya@welfie.in</li>
-                             <li>ritwik@welfie.in</li> 
-                             <li>abhinav@welfie.in</li>
-                         </ul>
-                     </div>
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-<!--     <nav id="footer">
-        <div class="container">
-            <div class="pull-left fnav">
-                <p>ALL RIGHTS RESERVED. COPYRIGHT © 2014. Designed by <a href="https://dribbble.com/shots/1817781--FREEBIE-Spirit8-Digital-agency-one-page-template">Robert Berki</a> and Coded by <a href="https://dribbble.com/jennpereira">Jenn Pereira</a></p>
-            </div>
-            <div class="pull-right fnav">
-                <ul class="footer-social">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </nav> -->
-
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery.1.11.1.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/SmoothScroll.js"></script>
-    <script type="text/javascript" src="js/jquery.isotope.js"></script>
-
-    <script src="js/owl.carousel.js"></script>
-
-    <!-- Javascripts
-    ================================================== -->
-    <script type="text/javascript" src="js/main.js"></script>
-
-  </body>
+  <script src="js/modern.js"></script>
+</body>
 </html>
