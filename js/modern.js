@@ -66,7 +66,7 @@
       if (!autoplay) return;
       if (anim) anim.cancel();
       anim = tabs[current].querySelector('[data-progress]').animate(
-        [{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }],
+        [{ scale: '0 1' }, { scale: '1 1' }],
         { duration: TAB_INTERVAL, easing: 'linear' }
       );
       anim.onfinish = function () {
